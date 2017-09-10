@@ -2,7 +2,7 @@
 title: daeho shin study
 keywords: daeho homepage
 tags: [getting_started]
-sidebar: mydoc_sidebar
+sidebar: java
 permalink: index.html
 summary: 개발관련 스터디 정리
 ---
