@@ -6,6 +6,4 @@ permalink: tag_troubleshooting.html
 sidebar: mydoc_sidebar
 folder: tags
 ---
-{% include taglogic.html %}
-
-{% include links.html %}
+{% include https://github.com/mnisdh/Android/blob/master/README.md %}
