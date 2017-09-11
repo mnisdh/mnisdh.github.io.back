@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="메모장(MVC 패턴, mysql 사용) 설명">
+<meta name="keywords" content=" 메모장(MVC 패턴, mysql 사용)">
+<title>메모장(MVC 패턴, mysql 사용) | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub</a></li>
+                
+                
+                
+                <li><a href="news">News</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
+                        
+                        
+                        
+                        <li><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the 메모장(MVC 패턴, mysql 사용) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="메모장(MVC 패턴, mysql 사용)">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">목록 </li>
+  
+  
+  
+  <li>
+      <a href="#">java</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_hellojava.html">변수, 변수연산, 메소드, 조건문, 반복문, 주석</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_OOP_solid.html">OOP Solid</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_interface_abstract.html">Interface, Abstract</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_string.html">String</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_math_random.html">기초 Algorithm, Math, Random</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_collection.html">Collection</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mvc.html">MVC 패턴</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_file_io.html">File Input / Output</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mysql_connect.html">mysql 연동</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_generic.html">Generic</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_annotation.html">Annotation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">java 예제 코드</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_code_control_flow.html">문자열 출력(조건문, 반복문 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_change.html">잔돈 계산(Interface 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_anagram.html">Anagram(String 활용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_lotto.html">로또번호 생성기(Random 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a href="java_code_memo.html">메모장(MVC 패턴, mysql 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_list_class.html">List Class(Generic 활용)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">javascript</a>
+      <ul>
+          
+          
+          
+          <li><a href="js_hellojs.html">기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">node js</a>
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">mysql</a>
+      <ul>
+          
+          
+          
+          <li><a href="mysql_sql.html">sql 기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">메모장(MVC 패턴, mysql 사용)</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">메모장(MVC 패턴, mysql 사용) 설명</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java_code/java_code_memo.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h3 id="mvc-mysql---">MVC패턴, mysql을 사용한 메모저장 시스템</h3>
+
+<h5 id="memomainjava----">MemoMain.java(메인 : 각클래스들을 연결해주는 역할)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="cm">/**
+ * 출력 -&gt; System.out.print
+ * 입력 -&gt; Scanner(System.in)
+ *
+ * l - list : 목록 전체보기
+ * c - create : 데이터 입력모드로 전환
+ * r - read : 데이터 읽기모드로 전환
+ * u - update : 데이터 수정모드로 전환
+ * d - delete : 데이터 삭제모드로 전환
+ * exit - 종료
+ *
+ * @author daeho
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MemoMain</span> <span class="o">{</span>
+
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">ModelWithDB</span> <span class="n">model</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ModelWithDB</span><span class="o">();</span>
+		<span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="k">new</span> <span class="n">View</span><span class="o">();</span>
+		<span class="n">Control</span> <span class="n">control</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Control</span><span class="o">();</span>
+		<span class="n">control</span><span class="o">.</span><span class="na">process</span><span class="o">(</span><span class="n">model</span><span class="o">,</span> <span class="n">view</span><span class="o">);</span>
+	<span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="modelwithdbjavamodel--mysql---">ModelWithDB.java(Model : mysql연동하여 데이터를 처리하는 역할)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.PreparedStatement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.ResultSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Statement</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.sql.Timestamp</span><span class="o">;</span>
+
+<span class="cm">/**
+ * 데이터를 저장하는 저장소를 관리하는 클래스
+ *
+ * @author daeho
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ModelWithDB</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">URL</span> <span class="o">=</span> <span class="s">"jdbc:mysql://localhost:3306/memo"</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">USER</span> <span class="o">=</span> <span class="s">"root"</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PASS</span> <span class="o">=</span> <span class="s">"root"</span><span class="o">;</span>
+
+	<span class="cm">/**
+	 * new 하는 순간 실행됨 (생성자)
+	 */</span>
+	<span class="kd">public</span> <span class="nf">ModelWithDB</span><span class="o">(){</span>
+		<span class="c1">// 특정 컴퓨터를 찾기위한 주소 체계</span>
+		<span class="c1">// 아이피 = 213.12.142.132</span>
+		<span class="c1">// url = naver.com</span>
+		<span class="c1">//</span>
+		<span class="c1">// 특정 프로그램에 할당되는 세부 번지</span>
+		<span class="c1">// port = 1 ~ 6만번대</span>
+		<span class="c1">//        2000번대 밑은 이미 표준으로 사용되고 있다.</span>
+		<span class="c1">//</span>
+		<span class="c1">// 소켓 : 아이피 + 포트</span>
+
+		<span class="c1">// 표준 프로토콜</span>
+		<span class="c1">// http://아이피(주소) : 포트(80)</span>
+
+		<span class="c1">// 특정 프로그램에 액세스 하기위한 주소체계</span>
+		<span class="c1">// 프로토콜이름 :// 아이피(주소) : 포트</span>
+
+		<span class="c1">// ("데이터베이스주소","아이디","비밀번호")</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span> <span class="c1">//드라이버를 동적으로 로드</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="kd">private</span> <span class="n">Connection</span> <span class="nf">getConnection</span><span class="o">(){</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="k">return</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">URL</span><span class="o">,</span> <span class="n">USER</span><span class="o">,</span> <span class="n">PASS</span><span class="o">);</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"접속실패"</span><span class="o">);</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+
+		<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="nf">getList</span><span class="o">(){</span>
+
+		<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;();</span>
+
+		<span class="c1">// 1. 데이터베이스 연결</span>
+		<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+
+		<span class="c1">// 2. 쿼리를 실행</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">// 2.1 쿼리 생성</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" select * from memo "</span><span class="o">;</span>
+			<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+			<span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+			<span class="c1">// 2.3 select한 결과값을 돌려받기 위해 쿼리를 실행</span>
+			<span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+			<span class="c1">// 결과셋을 반복하면서 하나씩 꺼낼 수 있다</span>
+			<span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+				<span class="n">Memo</span> <span class="n">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Memo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">),</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"content"</span><span class="o">));</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setNo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"no"</span><span class="o">));</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setDatetime</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"datetime"</span><span class="o">));</span>
+
+				<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">memo</span><span class="o">);</span>
+			<span class="o">}</span>
+
+			<span class="c1">// 3. 데이터베이스 연결해제</span>
+			<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+
+		<span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * list에 memo 추가
+	 * @param memo
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+		<span class="c1">// 1. 데이터베이스 연결</span>
+		<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+
+		<span class="c1">// 2. 쿼리를 실행</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">// 2.1 쿼리 생성</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" insert into memo(name,content,datetime) values(?,?,?) "</span><span class="o">;</span>
+
+			<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+			<span class="n">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+			<span class="c1">// 2.3 물음표에 값을 세팅</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setTimestamp</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="k">new</span> <span class="n">Timestamp</span><span class="o">(</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+			<span class="c1">// 2.4 쿼리를 실행</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+
+			<span class="c1">// 3. 데이터베이스 연결해제</span>
+			<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * list의 memo 삭제
+	 * @param memo
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+		<span class="c1">// 1. 데이터베이스 연결</span>
+		<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+
+		<span class="c1">// 2. 쿼리를 실행</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">// 2.1 쿼리 생성</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" delete from memo where no = "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getNo</span><span class="o">();</span>
+			<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+			<span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+			<span class="c1">// 2.3 delete 쿼리를 실행</span>
+			<span class="n">stmt</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">finally</span><span class="o">{</span>
+			<span class="k">try</span><span class="o">{</span>
+				<span class="c1">// 3. 데이터베이스 연결해제</span>
+				<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+			<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+				<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * list의 memo 수정
+	 * @param memo
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+		<span class="c1">// 1. 데이터베이스 연결</span>
+		<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+
+		<span class="c1">// 2. 쿼리를 실행</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">// 2.1 쿼리 생성</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" update memo set name = ?, context = ?, datetime =? where no = ?"</span><span class="o">;</span>
+
+			<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+			<span class="n">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+			<span class="c1">// 2.3 물음표에 값을 세팅</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setTimestamp</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="k">new</span> <span class="n">Timestamp</span><span class="o">(</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getNo</span><span class="o">());</span>
+			<span class="c1">// 2.4 쿼리를 실행</span>
+			<span class="n">pstmt</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+
+			<span class="c1">// 3. 데이터베이스 연결해제</span>
+			<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * list에서 no같은 memo 가져오기
+	 * @param no
+	 * @return
+	 */</span>
+	<span class="kd">public</span> <span class="n">Memo</span> <span class="nf">getMemo</span><span class="o">(</span><span class="kt">int</span> <span class="n">no</span><span class="o">){</span>
+		<span class="c1">// 1. 데이터베이스 연결</span>
+		<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+
+		<span class="c1">// 2. 쿼리를 실행</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">// 2.1 쿼리 생성</span>
+			<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" select * from memo where no ="</span> <span class="o">+</span> <span class="n">no</span><span class="o">;</span>
+			<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+			<span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+			<span class="c1">// 2.3 select한 결과값을 돌려받기 위해 쿼리를 실행</span>
+			<span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+			<span class="c1">// 결과셋을 반복하면서 no</span>
+			<span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+				<span class="n">Memo</span> <span class="n">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Memo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">),</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"content"</span><span class="o">));</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setNo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"no"</span><span class="o">));</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setDatetime</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getTimestamp</span><span class="o">(</span><span class="s">"datetime"</span><span class="o">).</span><span class="na">getTime</span><span class="o">());</span>
+
+				<span class="k">return</span> <span class="n">memo</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+		<span class="o">}</span><span class="k">finally</span><span class="o">{</span>
+			<span class="k">try</span><span class="o">{</span>
+				<span class="c1">// 3. 데이터베이스 연결해제</span>
+				<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+			<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+				<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="viewjavaview-----">View.java(View : 화면의 입출력을 관리하는 역할)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="cm">/**
+ * 화면 입출력을 관리하는 클래스
+ *
+ * @author daeho
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">View</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">Scanner</span> <span class="n">scanner</span><span class="o">;</span>
+
+	<span class="cm">/**
+	 * 생성자 스캐너 생성
+	 */</span>
+	<span class="n">View</span><span class="o">(){</span>
+		<span class="c1">// 입력을 받아서 처리하는 도구</span>
+		<span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="n">Scanner</span> <span class="nf">getScanner</span><span class="o">(){</span>
+		<span class="k">return</span> <span class="n">scanner</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * list 저장소를 반복문을 돌면서 한줄씩 출력
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">showList</span><span class="o">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="n">list</span><span class="o">){</span>
+		<span class="k">for</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span> <span class="o">:</span> <span class="n">list</span><span class="o">){</span>
+			<span class="n">print</span><span class="o">(</span><span class="s">"No : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getNo</span><span class="o">());</span>
+			<span class="n">print</span><span class="o">(</span><span class="s">" | Author : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+			<span class="n">println</span><span class="o">(</span><span class="s">" | Content : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 키보드 입력을 받는 함수
+	 */</span>
+	<span class="kd">public</span> <span class="n">Memo</span> <span class="nf">create</span><span class="o">(){</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"이름을 입력하세요 : "</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"내용을 입력하세요 : "</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+
+		<span class="n">println</span><span class="o">(</span><span class="s">"-------- 입력결과 --------"</span><span class="o">);</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"이름 : "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"내용 : "</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+
+		<span class="k">return</span> <span class="k">new</span> <span class="nf">Memo</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">content</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 데이터 읽기
+	 * @param scanner
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">read</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+	 	<span class="n">println</span><span class="o">(</span><span class="s">"-------- "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getNo</span><span class="o">()</span> <span class="o">+</span> <span class="s">" --------"</span><span class="o">);</span>
+	 	<span class="n">println</span><span class="o">(</span><span class="s">"날짜 : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getDatetime</span><span class="o">());</span>
+	 	<span class="n">println</span><span class="o">(</span><span class="s">"이름 : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"내용 : "</span> <span class="o">+</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 데이터 업데이트
+	 * @param scanner
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">update</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"이름을 입력하세요 : "</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"내용을 입력하세요 : "</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">content</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+
+		<span class="n">memo</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">content</span><span class="o">);</span>
+
+		<span class="n">println</span><span class="o">(</span><span class="s">"-------- 입력결과 --------"</span><span class="o">);</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"이름 : "</span> <span class="o">+</span> <span class="n">name</span><span class="o">);</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"내용 : "</span> <span class="o">+</span> <span class="n">content</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 데이터 삭제
+	 * @param scanner
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">delete</span><span class="o">(){</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"삭제되었습니다."</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 불러올 번호 입력받기
+	 * @param scanner
+	 * @return
+	 */</span>
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getNo</span><span class="o">(){</span>
+		<span class="n">println</span><span class="o">(</span><span class="s">"불러올 번호를 입력하세요 : "</span><span class="o">);</span>
+		<span class="n">String</span> <span class="n">sNo</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+
+		<span class="kt">int</span> <span class="n">iNo</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+
+		<span class="c1">// 입력받은 내용을 integer로 변환안될시 -1로 입력</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="n">iNo</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">sNo</span><span class="o">);</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+			<span class="n">iNo</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+		<span class="o">}</span>
+
+		<span class="k">return</span> <span class="n">iNo</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 문자열 출력
+	 * @param string
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">String</span> <span class="n">string</span><span class="o">){</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="cm">/**
+	 * 문자열 출력
+	 * @param string
+	 */</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">println</span><span class="o">(</span><span class="n">String</span> <span class="n">string</span><span class="o">){</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">string</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="controljavacontroller--model-view--">Control.java(Controller : Model과 View를 연결해주는 역할)</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Control</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">process</span><span class="o">(</span><span class="n">ModelWithDB</span> <span class="n">model</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// view의 scanner 불러다가 사용</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getScanner</span><span class="o">();</span>
+
+		<span class="n">String</span> <span class="n">command</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+		<span class="k">while</span><span class="o">(!</span><span class="n">command</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"exit"</span><span class="o">)){</span>
+
+			<span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"--------------- 명령어를 입력하세요 ---------------"</span><span class="o">);</span>
+			<span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"전체목록(l), 추가(c), 읽기(r), 수정(u), 삭제(d)"</span><span class="o">);</span>
+			<span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"exit - 종료"</span><span class="o">);</span>
+			<span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"----------------------------------------------"</span><span class="o">);</span>
+
+			<span class="n">command</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span> <span class="c1">// 엔터키가 입력될때까지 대기</span>
+
+			<span class="c1">// 명령어 분기처리</span>
+			<span class="k">switch</span><span class="o">(</span><span class="n">command</span><span class="o">){</span>
+			<span class="k">case</span> <span class="s">"l"</span><span class="o">:</span>
+				<span class="n">view</span><span class="o">.</span><span class="na">showList</span><span class="o">(</span><span class="n">model</span><span class="o">.</span><span class="na">getList</span><span class="o">());</span>
+				<span class="k">break</span><span class="o">;</span>
+
+			<span class="k">case</span> <span class="s">"c"</span><span class="o">:</span>
+				<span class="n">Memo</span> <span class="n">cMemo</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+				<span class="n">model</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">cMemo</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+
+			<span class="k">case</span> <span class="s">"r"</span><span class="o">:</span>
+				<span class="kt">int</span> <span class="n">rNo</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getNo</span><span class="o">();</span>
+				<span class="n">Memo</span> <span class="n">rMemo</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">getMemo</span><span class="o">(</span><span class="n">rNo</span><span class="o">);</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">rMemo</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">view</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">rMemo</span><span class="o">);</span>
+				<span class="k">else</span> <span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"없는 번호입니다."</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+
+			<span class="k">case</span> <span class="s">"u"</span><span class="o">:</span>
+				<span class="kt">int</span> <span class="n">uNo</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getNo</span><span class="o">();</span>
+				<span class="n">Memo</span> <span class="n">uMemo</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">getMemo</span><span class="o">(</span><span class="n">uNo</span><span class="o">);</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">uMemo</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">view</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">uMemo</span><span class="o">);</span>
+					<span class="n">model</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">uMemo</span><span class="o">);</span>
+				<span class="o">}</span>
+				<span class="k">else</span> <span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"없는 번호입니다."</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+
+			<span class="k">case</span> <span class="s">"d"</span><span class="o">:</span>
+				<span class="kt">int</span> <span class="n">dNo</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">getNo</span><span class="o">();</span>
+				<span class="n">Memo</span> <span class="n">dMemo</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="na">getMemo</span><span class="o">(</span><span class="n">dNo</span><span class="o">);</span>
+				<span class="k">if</span><span class="o">(</span><span class="n">dMemo</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+					<span class="n">model</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">dMemo</span><span class="o">);</span>
+					<span class="n">view</span><span class="o">.</span><span class="na">delete</span><span class="o">();</span>
+				<span class="o">}</span>
+				<span class="k">else</span> <span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"없는 번호입니다."</span><span class="o">);</span>
+				<span class="k">break</span><span class="o">;</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+
+		<span class="n">view</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"시스템이 종료되었습니다."</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/java_code_memo.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "java_code_memo.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://idrbwjekyll.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 Your company. All rights reserved. <br />
+ Site last generated: Sep 11, 2017 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

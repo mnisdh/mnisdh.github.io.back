@@ -6,54 +6,94 @@ entries:
   version:
   folders:
 
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage.html
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage.html
-      output: pdf
-      type: frontmatter
+#  - title:
+#    output: pdf
+#    type: frontmatter
+#    folderitems:
+#    - title:
+#      url: /titlepage.html
+#      output: pdf
+#      type: frontmatter
+#    - title:
+#      url: /tocpage.html
+#      output: pdf
+#      type: frontmatter
 
   - title: java
     output: web, pdf
     folderitems:
 
-    - title: 변수, 메소드, 연산, 주석
+    - title: 변수, 변수연산, 메소드, 조건문, 반복문, 주석
       url: /java_hellojava.html
       output: web, pdf
       type: homepage
 
-    - title: Interface / Control flow
-      url: /java_change.html
+    - title: OOP Solid
+      url: /java_OOP_solid.html
       output: web, pdf
 
-    - title: OOP solid
-      url: /java_OOP.html
-      output: web, pdf
-
-    - title: 조건문 / 반복문
-      url: /java_control_flow.html
-      output: web, pdf
-
-    - title: Algorithm
-      url: /java_algorithm.html
+    - title: Interface, Abstract
+      url: /java_interface_abstract.html
       output: web, pdf
 
     - title: String
       url: /java_string.html
       output: web, pdf
 
+    - title: 기초 Algorithm, Math, Random
+      url: /java_math_random.html
+      output: web, pdf
+
     - title: Collection
       url: /java_collection.html
       output: web, pdf
 
-    - title: MVC
+    - title: MVC 패턴
       url: /java_mvc.html
+      output: web, pdf
+
+    - title: File Input / Output
+      url: /java_file_io.html
+      output: web, pdf
+
+    - title: mysql 연동
+      url: /java_mysql_connect.html
+      output: web, pdf
+
+    - title: Generic
+      url: /java_generic.html
+      output: web, pdf
+
+    - title: Annotation
+      url: /java_annotation.html
+      output: web, pdf
+
+  - title: java 예제 코드
+    output: web, pdf
+    folderitems:
+
+    - title: 문자열 출력(조건문, 반복문 사용)
+      url: /java_code_control_flow.html
+      output: web, pdf
+
+    - title: 잔돈 계산(Interface 사용)
+      url: /java_code_change.html
+      output: web, pdf
+
+    - title: Anagram(String 활용)
+      url: /java_code_anagram.html
+      output: web, pdf
+
+    - title: 로또번호 생성기(Random 사용)
+      url: /java_code_lotto.html
+      output: web, pdf
+
+    - title: 메모장(MVC 패턴, mysql 사용)
+      url: /java_code_memo.html
+      output: web, pdf
+
+    - title: List Class(Generic 활용)
+      url: /java_code_list_class.html
       output: web, pdf
 
   - title: javascript

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about work...">
-<meta name="keywords" content="getting_started,  sample homepage">
-<title>Getting started with the Documentation Theme for Jekyll | Jekyll theme for documentation</title>
+<meta name="description" content="File Input / Output 설명">
+<meta name="keywords" content=" File Input / Output">
+<title>File Input / Output | Jekyll theme for documentation</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -179,7 +179,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Getting started with the Documentation Theme for Jekyll page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the File Input / Output page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -197,7 +197,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Getting started with the Documentation Theme for Jekyll">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="File Input / Output">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -282,7 +282,7 @@
           
           
           
-          <li><a href="java_file_io.html">File Input / Output</a></li>
+          <li class="active"><a href="java_file_io.html">File Input / Output</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Getting started with the Documentation Theme for Jekyll</h1>
+   <h1 class="post-title-main">File Input / Output</h1>
 </div>
 
 
@@ -430,7 +430,7 @@
 <div class="post-content">
 
    
-    <div class="summary">These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.</div>
+    <div class="summary">File Input / Output 설명</div>
    
 
     
@@ -461,22 +461,98 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages//index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/java_file_io.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="test">test</h2>
+  <h3 id="file-input--output">File Input / Output</h3>
+
+<h5 id="input">Input</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="nf">getList</span><span class="o">(){</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">clear</span><span class="o">();</span>
+
+	<span class="c1">// 1. 읽는 스트림을 연다</span>
+	<span class="k">try</span><span class="o">(</span><span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">database</span><span class="o">)){</span>
+		<span class="c1">// 2. 실제 파일 인코딩을 바꿔주는 래퍼 클래스 사용</span>
+		<span class="n">InputStreamReader</span> <span class="n">isr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">fis</span><span class="o">,</span> <span class="s">"UTF-8"</span><span class="o">);</span>
+
+		<span class="c1">// 3. 버퍼처리</span>
+		<span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="n">isr</span><span class="o">);</span>
+
+		<span class="c1">// readLine이 null이 아닐때까지 실행</span>
+		<span class="n">String</span> <span class="n">row</span><span class="o">;</span>
+		<span class="k">while</span><span class="o">((</span><span class="n">row</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+			<span class="n">String</span><span class="o">[]</span> <span class="n">tempRow</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="n">COLUMN_SEP</span><span class="o">);</span>
+			<span class="k">if</span><span class="o">(</span><span class="n">tempRow</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="mi">4</span><span class="o">){</span>
+				<span class="n">Memo</span> <span class="n">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Memo</span><span class="o">(</span><span class="n">tempRow</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="n">tempRow</span><span class="o">[</span><span class="mi">2</span><span class="o">]);</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setNo</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">tempRow</span><span class="o">[</span><span class="mi">0</span><span class="o">]));</span>
+				<span class="n">memo</span><span class="o">.</span><span class="na">setDatetime</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">tempRow</span><span class="o">[</span><span class="mi">3</span><span class="o">]));</span>
+
+				<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">memo</span><span class="o">);</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+		<span class="n">br</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">isr</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="output">Output</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+	<span class="kt">int</span> <span class="n">newCount</span> <span class="o">=</span> <span class="n">getCount</span><span class="o">()</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+	<span class="n">memo</span><span class="o">.</span><span class="na">setNo</span><span class="o">(</span><span class="n">newCount</span><span class="o">);</span>
+
+	<span class="c1">// memo 객체의 내용을 파일에 쓴다</span>
+	<span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+	<span class="c1">//try with문법 ( ) 안의 객체는 문법종료 후 자동으로 close해줌</span>
+	<span class="c1">//try(FileOutputStream fos = new FileOutputStream(database, true))</span>
+	<span class="k">try</span><span class="o">{</span>
+		<span class="c1">// 1. 쓰는 스트림을 연다</span>
+		<span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">database</span><span class="o">,</span> <span class="kc">true</span><span class="o">);</span>
+
+		<span class="c1">// 2. 스트림 중간처리를 함(인코딩 변경 등....)</span>
+		<span class="n">OutputStreamWriter</span> <span class="n">osw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">fos</span><span class="o">);</span>
+
+		<span class="c1">// 3. 버퍼처리</span>
+		<span class="n">BufferedWriter</span> <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="n">osw</span><span class="o">);</span>
+
+		<span class="c1">// 저장할 내용을 구분자로 분리하여 한줄의 문자열로 바꾼다</span>
+		<span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="n">memo</span><span class="o">.</span><span class="na">getNo</span><span class="o">()</span> <span class="o">+</span> <span class="n">COLUMN_SEP</span><span class="o">;</span>
+				 <span class="n">str</span> <span class="o">+=</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="n">COLUMN_SEP</span><span class="o">;</span>
+				 <span class="n">str</span> <span class="o">+=</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">()</span> <span class="o">+</span> <span class="n">COLUMN_SEP</span><span class="o">;</span>
+				 <span class="n">str</span> <span class="o">+=</span> <span class="n">memo</span><span class="o">.</span><span class="na">getDatetimeLong</span><span class="o">()</span> <span class="o">+</span> <span class="s">"\n"</span><span class="o">;</span>
+
+		<span class="n">bw</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+		<span class="n">bw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+		<span class="n">osw</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+
+		<span class="n">updateCount</span><span class="o">(</span><span class="n">newCount</span><span class="o">);</span>
+	<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+		<span class="c1">// 스트림이 생성되기전에 오류가 발생할 수 있으므로 null 체크 필요</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">fos</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+			<span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+				<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
-        
-        
         
     </div>
 
@@ -490,8 +566,8 @@ $('#toc').on('click', 'a', function() {
      */
 
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/index.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "index.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://localhost:4000/java_file_io.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "java_file_io.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW

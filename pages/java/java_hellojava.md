@@ -1,19 +1,17 @@
 ---
-title: Hello java
-keywords: 자바, 변수, 메소드, 주석, 연산
+title: 변수, 변수연산, 메소드, 조건문, 반복문, 주석
+keywords: 변수, 변수연산, 메소드, 조건문, 반복문, 주석
 last_updated:
 tags:
-summary: "메소드 구조, 변수 다루는 법, 변수연산 테스트, 주석종류"
+summary: "변수 다루는 법, 메소드 구조, 변수연산 테스트, 조건문 / 반복문 설명, 주석 종류"
 sidebar: mydoc_sidebar
 permalink: java_hellojava.html
 folder: java
 ---
 
+### 변수 다루는 법
 
-	변수, 메소드, 연산, 주석 설명
-
-#### 변수 다루는 법
-1. int
+##### int
 
 ```java
   //정수 연산은 int로 대체된다
@@ -25,7 +23,7 @@ folder: java
 ```
 
 
-2. long
+##### long
 
 ```java
   //long 선언시 값마지막에 L붙여줌
@@ -33,7 +31,7 @@ folder: java
 ```
 
 
-3. double, float
+##### double, float
 
 ```java
   //실수는 모두 double 로 대체된다
@@ -43,7 +41,7 @@ folder: java
 ```
 
 
-4. 실수 연산
+##### 실수 연산
 
 ```java
   //실수는 직접연산하지 않는다
@@ -58,7 +56,7 @@ folder: java
 ```
 
 
-5. 우선순위
+##### 우선순위
 
 ```java
   //연산자 우선순위는 괄호로 하고 부족한부분은 검색
@@ -66,7 +64,7 @@ folder: java
 ```
 
 
-6. int to String 메소드
+##### int to String 메소드
 
 ```java
   	/**
@@ -80,7 +78,7 @@ folder: java
 ```
 
 
-7. String to int 메소드
+##### String to int 메소드
 
 ```java
   	/**
@@ -94,7 +92,7 @@ folder: java
 ```
 
 
-8. String to long 메소드
+##### String to long 메소드
 
 ```java
   	/**
@@ -108,7 +106,7 @@ folder: java
 ```
 
 
-#### 메소드 구조
+### 메소드 구조
 
 ```java
   접근제한자 리턴타입 함수명(파라미터타입 파라미터) {  
@@ -121,7 +119,7 @@ folder: java
 ```
 
 
-#### 연산 테스트
+### 연산 테스트
 
 ```java
   /**
@@ -146,7 +144,143 @@ folder: java
 ```
 
 
-#### 주석 종류
+### 조건문
+
+##### if문
+
+```java
+/**
+ * 조건문 if
+ */
+public void checkIf(){
+	int a = 10;
+	int b = 5;
+
+	if(a > b){
+		//a가 b보다 크면 실행되는 영역
+		System.out.println("a가 b보다 큽니다.");
+	}else if(a == b){
+		//a와 b가 같으면 실행되는 영역
+	}else{
+		//그외 조건일때 실행되는 영역
+	}
+
+}
+```
+
+
+##### switch문
+
+```java
+/**
+ * 조건문 switch
+ * 한개의 변수를 대상으로 값이 같은지 체크할때 사용
+ */
+public void checkSwitch(){
+	int a = 10;
+
+	switch(a){
+	case 5:
+		System.out.println("a의 값이 5입니다.");
+			break; //break가 없을시 아래코드까지 실행되므로 예외사항아닐시엔 항상 넣을것
+	case 10:
+		System.out.println("a의 값이 10입니다.");
+		break;
+	}
+}
+```
+
+
+### 반복문
+
+##### for문
+
+```java
+/**
+ * 반복문 for
+ * 배열의 인덱스는 0부터시작함
+ */
+public void checkFor(){
+	int[] array = {1, 2, 3, 4, 5, 6, 7};
+	//array[0] == 1
+	//array[1] == 2
+
+	//일반적인 for문
+	//for(시작값; 조건; 증감값)
+	for(int i = 0; i < array.length; i++){
+		System.out.println(array[i]);
+	}
+	/* result
+	 * 1
+	 * 2
+	 * 3
+	 * 4
+	 * 5
+	 * 6
+	 * 7
+	 */
+
+	//for(꺼낼타입 변수명 : 꺼낼배열)  향상된 for
+	for(int item : array){
+		System.out.println(item);
+	}
+	/* result
+	 * 1
+	 * 2
+	 * 3
+	 * 4
+	 * 5
+	 * 6
+	 * 7
+	 */
+}
+```
+
+
+##### while문
+
+```java
+/**
+ * 반복문 while
+ * 반복이 가능한 if문
+ */
+public void checkWhile(){
+	int[] array = {1, 2, 3, 4, 5, 6, 7};
+
+	int count = 0; // 시작값
+
+	// while(조건식)  false가 될때까지 실행
+	while(count < array.length){ // 종료값
+		System.out.println(array[count]);
+		count++; // 증감값
+	}
+}
+```
+
+
+##### do while문
+
+```java
+/**
+ * 반복문 do while
+ * While은 조건식 체크후 동작하지만 Do While은 do블럭 실행후 조건식을 체크하므로
+ * do블럭은 반드시 1번은 실행되는 방식
+ */
+public void checkDoWhile(){
+	int[] array = {1, 2, 3, 4, 5, 6, 7};
+
+	int count = 0;
+
+	do{
+		System.out.println(array[count]);
+		count++; // 증감값
+	}
+	while(count < array.length);
+}
+```
+
+
+### 주석 종류
 
 ```java
 1.

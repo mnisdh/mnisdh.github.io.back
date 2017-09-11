@@ -17,11 +17,187 @@
 
 
 {
-"title": "Hello java",
+"title": "OOP Solid",
 "tags": "",
-"keywords": "자바, 변수, 메소드, 주석, 연산",
+"keywords": "OOP Solid",
+"url": "java_OOP_solid.html",
+"summary": "OOP Solid 설명"
+}
+,
+
+
+
+{
+"title": "Annotation",
+"tags": "",
+"keywords": "Annotation",
+"url": "java_annotation.html",
+"summary": "Annotation 설명"
+}
+,
+
+
+
+{
+"title": "Anagram(String 활용)",
+"tags": "",
+"keywords": "Anagram(String 활용)",
+"url": "java_code_anagram.html",
+"summary": "Anagram(String 활용) 설명"
+}
+,
+
+
+
+{
+"title": "잔돈 계산(Interface 사용)",
+"tags": "",
+"keywords": "잔돈 계산(Interface 사용)",
+"url": "java_code_change.html",
+"summary": "잔돈 계산(Interface 사용) 설명"
+}
+,
+
+
+
+{
+"title": "문자열 출력(조건문, 반복문 사용)",
+"tags": "",
+"keywords": "문자열 출력(조건문, 반복문 사용)",
+"url": "java_code_control_flow.html",
+"summary": "문자열 출력(조건문, 반복문 사용) 설명"
+}
+,
+
+
+
+{
+"title": "List Class(Generic 활용)",
+"tags": "",
+"keywords": "List Class(Generic 활용)",
+"url": "java_code_list_class.html",
+"summary": "List Class(Generic 활용) 설명"
+}
+,
+
+
+
+{
+"title": "로또번호 생성기(Random 사용)",
+"tags": "",
+"keywords": "로또번호 생성기(Random 사용)",
+"url": "java_code_lotto.html",
+"summary": "로또번호 생성기(Random 사용) 설명"
+}
+,
+
+
+
+{
+"title": "메모장(MVC 패턴, mysql 사용)",
+"tags": "",
+"keywords": "메모장(MVC 패턴, mysql 사용)",
+"url": "java_code_memo.html",
+"summary": "메모장(MVC 패턴, mysql 사용) 설명"
+}
+,
+
+
+
+{
+"title": "Collection",
+"tags": "",
+"keywords": "Collection",
+"url": "java_collection.html",
+"summary": "Collection 설명"
+}
+,
+
+
+
+{
+"title": "File Input / Output",
+"tags": "",
+"keywords": "File Input / Output",
+"url": "java_file_io.html",
+"summary": "File Input / Output 설명"
+}
+,
+
+
+
+{
+"title": "Generic",
+"tags": "",
+"keywords": "Generic",
+"url": "java_generic.html",
+"summary": "Generic 설명"
+}
+,
+
+
+
+{
+"title": "변수, 변수연산, 메소드, 조건문, 반복문, 주석",
+"tags": "",
+"keywords": "변수, 변수연산, 메소드, 조건문, 반복문, 주석",
 "url": "java_hellojava.html",
-"summary": "메소드 구조, 변수 다루는 법, 변수연산 테스트, 주석종류"
+"summary": "변수 다루는 법, 메소드 구조, 변수연산 테스트, 조건문 / 반복문 설명, 주석 종류"
+}
+,
+
+
+
+{
+"title": "Interface, Abstract",
+"tags": "",
+"keywords": "Interface, Abstract",
+"url": "java_interface_abstract.html",
+"summary": "Interface, Abstract 설명"
+}
+,
+
+
+
+{
+"title": "기초 Algorithm, Math, Random",
+"tags": "",
+"keywords": "기초 Algorithm, Math, Random",
+"url": "java_math_random.html",
+"summary": "기초 Algorithm, Math, Random 설명"
+}
+,
+
+
+
+{
+"title": "MVC 패턴",
+"tags": "",
+"keywords": "MVC 패턴",
+"url": "java_mvc.html",
+"summary": "MVC 패턴 설명"
+}
+,
+
+
+
+{
+"title": "mysql 연동",
+"tags": "",
+"keywords": "mysql 연동",
+"url": "java_mysql_connect.html",
+"summary": "mysql 연동 설명"
+}
+,
+
+
+
+{
+"title": "String",
+"tags": "",
+"keywords": "String",
+"url": "java_string.html",
+"summary": "String 설명"
 }
 ,
 

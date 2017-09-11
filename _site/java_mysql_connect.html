@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about work...">
-<meta name="keywords" content="getting_started,  sample homepage">
-<title>Getting started with the Documentation Theme for Jekyll | Jekyll theme for documentation</title>
+<meta name="description" content="mysql 연동 설명">
+<meta name="keywords" content=" mysql 연동">
+<title>mysql 연동 | Jekyll theme for documentation</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -179,7 +179,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Getting started with the Documentation Theme for Jekyll page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the mysql 연동 page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -197,7 +197,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Getting started with the Documentation Theme for Jekyll">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="mysql 연동">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -289,7 +289,7 @@
           
           
           
-          <li><a href="java_mysql_connect.html">mysql 연동</a></li>
+          <li class="active"><a href="java_mysql_connect.html">mysql 연동</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Getting started with the Documentation Theme for Jekyll</h1>
+   <h1 class="post-title-main">mysql 연동</h1>
 </div>
 
 
@@ -430,7 +430,7 @@
 <div class="post-content">
 
    
-    <div class="summary">These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.</div>
+    <div class="summary">mysql 연동 설명</div>
    
 
     
@@ -461,22 +461,147 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages//index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/java_mysql_connect.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="test">test</h2>
+  <h3 id="mysql-">mysql 연동</h3>
+
+<h5 id="connector-">Connector 설치</h5>
+
+<ul>
+  <li>osx의 경우 <a href="https://dev.mysql.com/downloads/connector/j/5.1.html">Connector/j</a>를 다운로드한다</li>
+  <li>이클립스 프로젝트 속성 - Java build path - Libraries - Add External jre로 다운받은 파일 추가하면 완료</li>
+</ul>
+
+<h5 id="section">사용법</h5>
+
+<ul>
+  <li>드라이버 동적 로드</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="nf">ModelWithDB</span><span class="o">(){</span>
+	<span class="c1">// 특정 컴퓨터를 찾기위한 주소 체계</span>
+	<span class="c1">// 아이피 = 213.12.142.132</span>
+	<span class="c1">// url = naver.com</span>
+	<span class="c1">//</span>
+	<span class="c1">// 특정 프로그램에 할당되는 세부 번지</span>
+	<span class="c1">// port = 1 ~ 6만번대</span>
+	<span class="c1">//        2000번대 밑은 이미 표준으로 사용되고 있다.</span>
+	<span class="c1">//</span>
+	<span class="c1">// 소켓 : 아이피 + 포트</span>
+
+	<span class="c1">// 표준 프로토콜</span>
+	<span class="c1">// http://아이피(주소) : 포트(80)</span>
+
+	<span class="c1">// 특정 프로그램에 액세스 하기위한 주소체계</span>
+	<span class="c1">// 프로토콜이름 :// 아이피(주소) : 포트</span>
+
+	<span class="c1">// ("데이터베이스주소","아이디","비밀번호")</span>
+	<span class="k">try</span><span class="o">{</span>
+		<span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span> <span class="c1">//드라이버를 동적으로 로드</span>
+	<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Connection 맺기</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">URL</span> <span class="o">=</span> <span class="s">"jdbc:mysql://localhost:3306/memo"</span><span class="o">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">USER</span> <span class="o">=</span> <span class="s">"root"</span><span class="o">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">PASS</span> <span class="o">=</span> <span class="s">"root"</span><span class="o">;</span>
+
+<span class="kd">private</span> <span class="n">Connection</span> <span class="nf">getConnection</span><span class="o">(){</span>
+	<span class="k">try</span><span class="o">{</span>
+		<span class="k">return</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">URL</span><span class="o">,</span> <span class="n">USER</span><span class="o">,</span> <span class="n">PASS</span><span class="o">);</span>
+	<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"접속실패"</span><span class="o">);</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Statement를 사용한 쿼리실행</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="nf">getList</span><span class="o">(){</span>
+
+	<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Memo</span><span class="o">&gt;();</span>
+
+	<span class="c1">// 1. 데이터베이스 연결</span>
+	<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+
+	<span class="c1">// 2. 쿼리를 실행</span>
+	<span class="k">try</span><span class="o">{</span>
+		<span class="c1">// 2.1 쿼리 생성</span>
+		<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" select * from memo "</span><span class="o">;</span>
+		<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+		<span class="n">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+		<span class="c1">// 2.3 select한 결과값을 돌려받기 위해 쿼리를 실행</span>
+		<span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">stmt</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+		<span class="c1">// 결과셋을 반복하면서 하나씩 꺼낼 수 있다</span>
+		<span class="k">while</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+			<span class="n">Memo</span> <span class="n">memo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Memo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"name"</span><span class="o">),</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"content"</span><span class="o">));</span>
+			<span class="n">memo</span><span class="o">.</span><span class="na">setNo</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">"no"</span><span class="o">));</span>
+			<span class="n">memo</span><span class="o">.</span><span class="na">setDatetime</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"datetime"</span><span class="o">));</span>
+
+			<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">memo</span><span class="o">);</span>
+		<span class="o">}</span>
+
+		<span class="c1">// 3. 데이터베이스 연결해제</span>
+		<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+
+	<span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>PreparedStatement를 사용한 쿼리실행(Statement 보다 속도가 빠르다)</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">create</span><span class="o">(</span><span class="n">Memo</span> <span class="n">memo</span><span class="o">){</span>
+	<span class="c1">// 1. 데이터베이스 연결</span>
+	<span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">conn</span> <span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="k">return</span><span class="o">;</span>
+
+	<span class="c1">// 2. 쿼리를 실행</span>
+	<span class="k">try</span><span class="o">{</span>
+		<span class="c1">// 2.1 쿼리 생성</span>
+		<span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">" insert into memo(name,content,datetime) values(?,?,?) "</span><span class="o">;</span>
+
+		<span class="c1">// 2.2 쿼리를 실행 가능한 상태로 만들어준다</span>
+		<span class="n">PreparedStatement</span> <span class="n">pstmt</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+		<span class="c1">// 2.3 물음표에 값을 세팅</span>
+		<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+		<span class="n">pstmt</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">memo</span><span class="o">.</span><span class="na">getContent</span><span class="o">());</span>
+		<span class="n">pstmt</span><span class="o">.</span><span class="na">setTimestamp</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span> <span class="k">new</span> <span class="n">Timestamp</span><span class="o">(</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">()));</span>
+		<span class="c1">// 2.4 쿼리를 실행</span>
+		<span class="n">pstmt</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
+
+		<span class="c1">// 3. 데이터베이스 연결해제</span>
+		<span class="n">conn</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+	<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="o">){</span>
+		<span class="n">ex</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
-        
-        
         
     </div>
 
@@ -490,8 +615,8 @@ $('#toc').on('click', 'a', function() {
      */
 
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/index.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "index.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://localhost:4000/java_mysql_connect.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "java_mysql_connect.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW

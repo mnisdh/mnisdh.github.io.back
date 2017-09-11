@@ -34,7 +34,103 @@
   
   
   <url>
+    <loc>http://localhost:4000/java_OOP_solid.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_annotation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_anagram.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_change.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_control_flow.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_list_class.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_lotto.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_code_memo.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_collection.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_file_io.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_generic.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/java_hellojava.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_interface_abstract.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_math_random.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_mvc.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_mysql_connect.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/java_string.html</loc>
   </url>
   
   

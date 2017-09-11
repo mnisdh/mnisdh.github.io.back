@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about work...">
-<meta name="keywords" content="getting_started,  sample homepage">
-<title>Getting started with the Documentation Theme for Jekyll | Jekyll theme for documentation</title>
+<meta name="description" content="Collection 설명">
+<meta name="keywords" content=" Collection">
+<title>Collection | Jekyll theme for documentation</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -179,7 +179,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Getting started with the Documentation Theme for Jekyll page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Collection page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -197,7 +197,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Getting started with the Documentation Theme for Jekyll">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Collection">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -268,7 +268,7 @@
           
           
           
-          <li><a href="java_collection.html">Collection</a></li>
+          <li class="active"><a href="java_collection.html">Collection</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Getting started with the Documentation Theme for Jekyll</h1>
+   <h1 class="post-title-main">Collection</h1>
 </div>
 
 
@@ -430,7 +430,7 @@
 <div class="post-content">
 
    
-    <div class="summary">These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll.</div>
+    <div class="summary">Collection 설명</div>
    
 
     
@@ -461,22 +461,124 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages//index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/java_collection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h2 id="test">test</h2>
+  <h3 id="collection">Collection</h3>
+
+<h5 id="array">Array</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * 선언
+ * 타입[] 이름 = new 타입[배열공간크기];
+ * 기본형인 int, long 등은 공간을 할당하는 것만으로
+ * 기본값으로 0이 할당이됨
+ */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkArray</span><span class="o">(){</span>
+	<span class="kt">int</span><span class="o">[]</span> <span class="n">intArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">intArray</span><span class="o">[</span><span class="mi">7</span><span class="o">]);</span>
+
+	<span class="n">Item</span><span class="o">[]</span> <span class="n">itemArray</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Item</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+	<span class="kt">int</span> <span class="n">itemLength</span> <span class="o">=</span> <span class="n">itemArray</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+	<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">itemLength</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="n">itemArray</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Item</span><span class="o">();</span>
+	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">itemArray</span><span class="o">[</span><span class="mi">7</span><span class="o">].</span><span class="na">getMyName</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="list">List</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * Index를 포함하는 동적 객체배열
+ */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkList</span><span class="o">(){</span>
+	<span class="c1">// 선언은 일반 객체를 초기화 하는것과 같다</span>
+	<span class="n">List</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">();</span>
+
+	<span class="c1">// 입력</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Item</span><span class="o">());</span> <span class="c1">// &lt;- 0번 index로 생성</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Item</span><span class="o">());</span> <span class="c1">// &lt;- 1번 index로 생성</span>
+
+	<span class="c1">// 조회</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span> <span class="c1">// &lt;- index가 0번째인 값을 가져옴</span>
+
+	<span class="c1">// 수정</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">Item</span><span class="o">());</span> <span class="c1">// 1번 index의 아이템을 대체</span>
+
+	<span class="c1">// 삽입</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="k">new</span> <span class="n">Item</span><span class="o">());</span> <span class="c1">// 1번부터 이후의 아이템 index를 하나씩 증가시키고</span>
+													 <span class="c1">// 자신이 1번으로 들어감</span>
+
+	<span class="c1">// 삭제</span>
+	<span class="n">list</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span> <span class="c1">// index가 1번인 것을 삭제</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="generic-">Generic 사용</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * 제네릭을 사용하는 방법
+ * 타입&lt;제네릭타입&gt; 변수이름;    &lt;- 제네릭타입은 클래스만 가능
+ */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkGeneric</span><span class="o">(){</span>
+	<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Item</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+	<span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Item</span><span class="o">());</span>
+
+	<span class="k">for</span><span class="o">(</span><span class="n">Item</span> <span class="n">item</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="n">item</span><span class="o">.</span><span class="na">getMyName</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="set">Set</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * List와 유사하나 중복값을 허용하지 않는 동적 객체배열
+ */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkSet</span><span class="o">(){</span>
+	<span class="c1">// 선언</span>
+	<span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">set</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+
+	<span class="c1">// 입력 - 중복값은 입력되지 않음</span>
+	<span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+	<span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Good to see you"</span><span class="o">);</span>
+	<span class="n">set</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+
+	<span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span> <span class="o">:</span> <span class="n">set</span><span class="o">)</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+
+	<span class="c1">// set은 iterator를 달아서 순서대로 처리해 줄 수 있음</span>
+	<span class="n">Iterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">set</span><span class="o">.</span><span class="na">iterator</span><span class="o">();</span>
+	<span class="k">while</span><span class="o">(</span><span class="n">iterator</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="n">iterator</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="map">Map</h5>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+ * Key, Value로 구성된 동적 객체배열
+ */</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkMap</span><span class="o">(){</span>
+	<span class="c1">// 선언</span>
+	<span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+
+	<span class="c1">// 입력</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"Key01"</span><span class="o">,</span> <span class="mi">12344434</span><span class="o">);</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"Key02"</span><span class="o">,</span> <span class="mi">12334</span><span class="o">);</span>
+
+	<span class="c1">// 조회</span>
+	<span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"Key01"</span><span class="o">);</span>
+
+	<span class="c1">// map을 반복문으로 처리하기</span>
+	<span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span> <span class="o">:</span> <span class="n">map</span><span class="o">.</span><span class="na">keySet</span><span class="o">())</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
-        
-        <b>Tags: </b>
-        
-        
-        
-        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
-        
-        
         
     </div>
 
@@ -490,8 +592,8 @@ $('#toc').on('click', 'a', function() {
      */
 
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/index.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "index.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://localhost:4000/java_collection.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "java_collection.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
