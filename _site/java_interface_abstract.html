@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Interface, Abstract 설명">
-<meta name="keywords" content=" Interface, Abstract">
-<title>Interface, Abstract | Jekyll theme for documentation</title>
+<meta name="description" content="다형성(Interface, Abstract) 설명">
+<meta name="keywords" content=" 다형성(Interface, Abstract)">
+<title>다형성(Interface, Abstract) | Jekyll theme for documentation</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -179,7 +179,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Interface, Abstract page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the 다형성(Interface, Abstract) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -197,7 +197,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Interface, Abstract">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="다형성(Interface, Abstract)">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -247,7 +247,7 @@
           
           
           
-          <li class="active"><a href="java_interface_abstract.html">Interface, Abstract</a></li>
+          <li class="active"><a href="java_interface_abstract.html">다형성(Interface, Abstract)</a></li>
           
           
           
@@ -422,7 +422,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">Interface, Abstract</h1>
+   <h1 class="post-title-main">다형성(Interface, Abstract)</h1>
 </div>
 
 
@@ -430,7 +430,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Interface, Abstract 설명</div>
+    <div class="summary">다형성(Interface, Abstract) 설명</div>
    
 
     
@@ -465,9 +465,118 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="interface">Interface</h3>
+  <h3 id="section">다형성</h3>
 
-<h3 id="abstract">Abstract</h3>
+<p>다형성의 성립조건
+- 클래스 계층구조(상속관계)
+- 메소드 재정의, 동적 바인딩
+- 상위캐스팅 후 재정의 된 메소드 호출</p>
+
+<h5 id="interface">Interface</h5>
+
+<p>추상메소드들로만 이루어져 있으며 메소드의 선언만 가능하다
+인터페이스의 메소드는 표준화된 공통기능을 가진다
+인터페이스를 사용하기 위해서는 implements 키워드를 사용한다
+하나의 클래스가 여러개의 인터페이스를 implements 할 수 있다</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="n">C</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="o">();</span>
+    <span class="n">c</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
+    <span class="n">c</span><span class="o">.</span><span class="na">save</span><span class="o">();</span>
+
+    <span class="c1">//아래와같이 인터페이스로 캐스팅해서 사용할수도 있음</span>
+    <span class="n">iA</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="o">();</span>
+    <span class="n">a</span><span class="o">.</span><span class="na">print</span><span class="o">();</span>
+
+    <span class="n">iB</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="o">();</span>
+    <span class="n">b</span><span class="o">.</span><span class="na">save</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// 인터페이스</span>
+<span class="kd">interface</span> <span class="nc">iA</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// 인터페이스</span>
+<span class="kd">interface</span> <span class="nc">iB</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">C</span> <span class="kd">implements</span> <span class="n">iA</span><span class="o">,</span> <span class="n">iB</span><span class="o">{</span>
+  <span class="c1">// 상속받은 메소드 재정의</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"print"</span><span class="o">);</span>
+  <span class="o">}</span>
+
+  <span class="c1">// 상속받은 메소드 재정의</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"save"</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h5 id="abstract-class-">Abstract class(추상 클래스)</h5>
+
+<p>추상클래스는 반드시 하나이상의 추상메소드를 가지며 객체를 생성할 수 없다
+추상 클래스나 추상메소드를 선언 하기위해서는 이름 앞에 abstract 키워드를 추가해야한다
+추상클래스를 상속받기위해서는 extends 키워드를 사용해야한다
+하나의 클래스는 하나의 클래스만 extends 할 수 있다</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="n">B</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
+    <span class="n">C</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="o">();</span>
+    <span class="n">b</span><span class="o">.</span><span class="na">change</span><span class="o">();</span>
+    <span class="n">c</span><span class="o">.</span><span class="na">change</span><span class="o">();</span>
+
+    <span class="c1">//아래와같이 부모클래스로 캐스팅해서 사용할수도 있음</span>
+    <span class="n">A</span> <span class="n">b2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
+    <span class="n">A</span> <span class="n">c2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">C</span><span class="o">();</span>
+    <span class="n">b2</span><span class="o">.</span><span class="na">change</span><span class="o">();</span>
+    <span class="n">c2</span><span class="o">.</span><span class="na">change</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//추상 클래스(super클래스)</span>
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">A</span><span class="o">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">size</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">){</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">//추상메소드</span>
+  <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">change</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">//서브 클래스</span>
+<span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
+  <span class="kt">int</span> <span class="n">width</span><span class="o">,</span> <span class="n">height</span><span class="o">;</span>
+
+  <span class="c1">//메소드 재정의</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">change</span><span class="o">(){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B changed."</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//서브 클래스</span>
+<span class="kd">class</span> <span class="nc">C</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
+  <span class="kt">int</span> <span class="n">a</span><span class="o">;</span>
+
+  <span class="c1">//메소드 재정의</span>
+  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">change</span><span class="o">(){</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"C changed."</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">

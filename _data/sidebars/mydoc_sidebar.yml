@@ -32,7 +32,7 @@ entries:
       url: /java_OOP_solid.html
       output: web, pdf
 
-    - title: Interface, Abstract
+    - title: 다형성(Interface, Abstract)
       url: /java_interface_abstract.html
       output: web, pdf
 
