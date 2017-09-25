@@ -9,10 +9,8 @@ permalink: java_string.html
 folder: java
 ---
 
-### String Api
-##### 스트링 함수
 
-- length - 문자열의 길이를 구한다  
+### length - 문자열의 길이를 구한다  
 
 ```Java
 String a = "String/Test";
@@ -22,7 +20,7 @@ System.out.println(a.length());
 ```
 
 
-- indexOf - 문자열의 위치를 리턴한다
+### indexOf - 문자열의 위치를 리턴한다
 
 ```Java
 // 위치검색
@@ -31,7 +29,7 @@ System.out.println(a.indexOf("Test"));
 ```
 
 
-- split - 문자열을 구분자 단위로 분해한다
+### split - 문자열을 구분자 단위로 분해한다
 
 ```java
 // 특정 구분자로 분해
@@ -43,7 +41,7 @@ String[] temp2 = a.split("");
 ```
 
 
-- substring - 지정한 인덱스대로 문자열을 분해한다
+### substring - 지정한 인덱스대로 문자열을 분해한다
 
 ```java
 // 문자열 자르기
@@ -52,7 +50,7 @@ System.out.println(a.substring(0, 6));
 ```
 
 
-- replace - 특정문자열을 지정한 문자열로 바꾼다
+### replace - 특정문자열을 지정한 문자열로 바꾼다
 
 ```java
 // 문자열 바꾸기
@@ -60,7 +58,7 @@ System.out.println(a.replace("Te", "Px"));
 ```
 
 
-- startsWith - 특정 문자열로 시작되는지 확인한다
+### startsWith - 특정 문자열로 시작되는지 확인한다
 
 ```Java
 // 특정 문자열로 시작되는지를 검사

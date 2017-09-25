@@ -9,9 +9,8 @@ permalink: java_code_memo.html
 folder: java_code
 ---
 
-### MVC패턴, mysql을 사용한 메모저장 시스템
 
-##### MemoMain.java(메인 : 각클래스들을 연결해주는 역할)
+### MemoMain.java(메인 : 각클래스들을 연결해주는 역할)
 
 ```java
 import java.util.Scanner;
@@ -43,7 +42,7 @@ public class MemoMain {
 ```
 
 
-##### ModelWithDB.java(Model : mysql연동하여 데이터를 처리하는 역할)
+### ModelWithDB.java(Model : mysql연동하여 데이터를 처리하는 역할)
 
 ```java
 import java.sql.Connection;
@@ -272,7 +271,7 @@ public class ModelWithDB {
 ```
 
 
-##### View.java(View : 화면의 입출력을 관리하는 역할)
+### View.java(View : 화면의 입출력을 관리하는 역할)
 
 ```java
 import java.util.ArrayList;
@@ -402,7 +401,7 @@ public class View {
 ```
 
 
-##### Control.java(Controller : Model과 View를 연결해주는 역할)
+### Control.java(Controller : Model과 View를 연결해주는 역할)
 
 ```java
 import java.util.Scanner;

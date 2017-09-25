@@ -9,10 +9,8 @@ permalink: java_collection.html
 folder: java
 ---
 
-### Collection
 
-
-##### Array
+### Array
 
 ```java
 /**
@@ -33,7 +31,7 @@ public void checkArray(){
 ```
 
 
-##### List
+### List
 
 ```java
 /**
@@ -63,7 +61,7 @@ public void checkList(){
 ```
 
 
-##### Generic 사용
+### Generic 사용
 
 ```java
 /**
@@ -80,7 +78,7 @@ public void checkGeneric(){
 ```
 
 
-##### Set
+### Set
 
 ```java
 /**
@@ -104,7 +102,7 @@ public void checkSet(){
 ```
 
 
-##### Map
+### Map
 
 ```java
 /**

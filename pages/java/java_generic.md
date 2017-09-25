@@ -15,7 +15,7 @@ folder: java
 - Object로 여러 타입을 받아서 사용할 수있으나 형변환을 잘못하면 runtime시에 잘못을 확인되는데 Generic사용시는 사전에 타입을 확인하므로 유용하다
 
 
-##### Class에서 사용시
+### Class에서 사용시
 
 ```java
 public class Part<T> {
@@ -37,7 +37,7 @@ public class Test(){
 ```
 
 
-##### 생성자에서 사용시
+### 생성자에서 사용시
 
 ```java
 public class Part<T, S>{
@@ -52,7 +52,7 @@ public class Part<T, S>{
 ```
 
 
-##### Method에서 사용시
+### Method에서 사용시
 
 ```java
 //Class에선 T를 사용하지만

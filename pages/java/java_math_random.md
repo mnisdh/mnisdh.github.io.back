@@ -9,9 +9,8 @@ permalink: java_math_random.html
 folder: java
 ---
 
-### Algorithm
 
-##### 숫자계산
+### 숫자계산
 - 1 ~ max까지 더하는 메소드
 
 ```
@@ -88,7 +87,7 @@ public long sumEven(long max){
 }
 ```
 
-##### Math 관련
+### Math 관련
 
 - abs - 절대값 구하기
 
@@ -129,7 +128,7 @@ Math.random(); // 0보다 크가나 같고 1보다 작은 실수를 리턴
 ```
 
 
-##### 일반적인 Random값 사용 관련
+### 일반적인 Random값 사용 관련
 
 ```java
 		Random random = new Random();

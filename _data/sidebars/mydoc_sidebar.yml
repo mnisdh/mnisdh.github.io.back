@@ -96,6 +96,46 @@ entries:
       url: /java_code_list_class.html
       output: web, pdf
 
+  - title: android
+    output: web, pdf
+    folderitems:
+
+    - title: Layout
+      url: /android_layout.html
+      output: web, pdf
+
+    - title: OnClickListener
+      url: /android_listener.html
+      output: web, pdf
+
+    - title: Animation
+      url: /android_animation.html
+      output: web, pdf
+
+    - title: Basic Widget
+      url: /android_basic_widget.html
+      output: web, pdf
+
+    - title: Custom View 사용법
+      url: /android_custom_view.html
+      output: web, pdf
+
+    - title: List View 사용법
+      url: /android_basic_list.html
+      output: web, pdf
+
+    - title: Permission
+      url: /android_permission.html
+      output: web, pdf
+
+    - title: File I/O
+      url: /android_file_i_o.html
+      output: web, pdf
+
+    - title: sqlite
+      url: /android_sqlite.html
+      output: web, pdf
+
   - title: javascript
     output: web, pdf
     folderitems:

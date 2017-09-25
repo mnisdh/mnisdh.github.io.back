@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Generic 설명">
 <meta name="keywords" content=" Generic">
-<title>Generic | Jekyll theme for documentation</title>
+<title>Generic | Daeho blog</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -105,7 +105,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Jekyll Documentation Theme</span></a>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Daeho blog</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -119,11 +119,7 @@
                 
                 
                 
-                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub</a></li>
-                
-                
-                
-                <li><a href="news">News</a></li>
+                <li><a href="https://github.com/mnisdh" target="_blank">GitHub</a></li>
                 
                 
                 
@@ -131,55 +127,11 @@
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
                 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
-                        
-                        
-                        
-                        <li><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
-                        
-                        
-                        
-                        <li><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
-                        
-                        
-                        
-                        <li><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
-                        
-                        
-                    </ul>
-                </li>
-                
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="mydoc_introduction.html">Jekyll Documentation Theme</a></li>
-                        
-                        
-                        
-                        <li><a href="p1_landing_page.html">Product 1</a></li>
-                        
-                        
-                        
-                        <li><a href="p2_landing_page.html">Product 2</a></li>
-                        
-                        
-                    </ul>
-                </li>
-                
-                
-                
 			<li>
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:tomjoht@gmail.com?subject=Jekyll documentation theme feedback&body=I have some feedback about the Generic page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:mnisdh2@gmail.com?subject=Daeho blog feedback&body=I have some feedback about the Generic page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -365,6 +317,78 @@
       
   
   <li>
+      <a href="#">android</a>
+      <ul>
+          
+          
+          
+          <li><a href="android_layout.html">Layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_listener.html">OnClickListener</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_animation.html">Animation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_basic_widget.html">Basic Widget</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_custom_view.html">Custom View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_basic_list.html">List View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_permission.html">Permission</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_file_i_o.html">File I/O</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_sqlite.html">sqlite</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
       <a href="#">javascript</a>
       <ul>
           
@@ -472,7 +496,7 @@ $('#toc').on('click', 'a', function() {
   <li>Object로 여러 타입을 받아서 사용할 수있으나 형변환을 잘못하면 runtime시에 잘못을 확인되는데 Generic사용시는 사전에 타입을 확인하므로 유용하다</li>
 </ul>
 
-<h5 id="class-">Class에서 사용시</h5>
+<h3 id="class-">Class에서 사용시</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Part</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">{</span>
 	<span class="kd">private</span> <span class="n">T</span> <span class="n">part</span><span class="o">;</span>
@@ -493,7 +517,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h5 id="section">생성자에서 사용시</h5>
+<h3 id="section">생성자에서 사용시</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Part</span><span class="o">&lt;</span><span class="n">T</span><span class="o">,</span> <span class="n">S</span><span class="o">&gt;{</span>
 	<span class="kd">private</span> <span class="n">T</span> <span class="n">item1</span><span class="o">;</span>
@@ -507,7 +531,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h5 id="method-">Method에서 사용시</h5>
+<h3 id="method-">Method에서 사용시</h3>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">//Class에선 T를 사용하지만</span>
 <span class="c1">//별개로 메소드에서 U로 다른 타입을 설정해서 사용가능함</span>
@@ -558,8 +582,8 @@ $('#toc').on('click', 'a', function() {
 <footer>
             <div class="row">
                 <div class="col-lg-12 footer">
-               &copy;2017 Your company. All rights reserved. <br />
- Site last generated: Sep 11, 2017 <br />
+               &copy;2017 mnisdh. All rights reserved. <br />
+ Site last generated: Sep 25, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

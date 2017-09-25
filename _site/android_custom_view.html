@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Custom View 설명">
+<meta name="keywords" content=" Custom View">
+<title>Custom View | Daeho blog</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Daeho blog</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/mnisdh" target="_blank">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:mnisdh2@gmail.com?subject=Daeho blog feedback&body=I have some feedback about the Custom View page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Custom View">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">목록 </li>
+  
+  
+  
+  <li>
+      <a href="#">java</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_hellojava.html">변수, 변수연산, 메소드, 조건문, 반복문, 주석</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_OOP_solid.html">OOP Solid</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_interface_abstract.html">다형성(Interface, Abstract)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_string.html">String</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_math_random.html">기초 Algorithm, Math, Random</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_collection.html">Collection</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mvc.html">MVC 패턴</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_file_io.html">File Input / Output</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mysql_connect.html">mysql 연동</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_generic.html">Generic</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_annotation.html">Annotation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">java 예제 코드</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_code_control_flow.html">문자열 출력(조건문, 반복문 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_change.html">잔돈 계산(Interface 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_anagram.html">Anagram(String 활용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_lotto.html">로또번호 생성기(Random 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_memo.html">메모장(MVC 패턴, mysql 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_list_class.html">List Class(Generic 활용)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">android</a>
+      <ul>
+          
+          
+          
+          <li><a href="android_layout.html">Layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_listener.html">OnClickListener</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_animation.html">Animation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_basic_widget.html">Basic Widget</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a href="android_custom_view.html">Custom View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_basic_list.html">List View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_permission.html">Permission</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_file_i_o.html">File I/O</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_sqlite.html">sqlite</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">javascript</a>
+      <ul>
+          
+          
+          
+          <li><a href="js_hellojs.html">기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">node js</a>
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">mysql</a>
+      <ul>
+          
+          
+          
+          <li><a href="mysql_sql.html">sql 기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Custom View</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Custom View 설명</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/android_custom_view.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h3 id="mainactivity-class">MainActivity class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">coustomview</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.constraint.ConstraintLayout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+
+<span class="cm">/**
+ * 커스텀뷰 만들기
+ *
+ * 1. 커스텀 속성을 attrs.xml 파일에 정의
+ *
+ * 2. 커스텀할 객체(위젯)를 상속받은 후 재정의
+ *
+ * 3. 커스텀한 위젯을 레이아웃.xml에서 태그로 사용
+ *
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    <span class="n">ConstraintLayout</span> <span class="n">stage</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+
+        <span class="c1">// view를 추가할 레이아웃 설정</span>
+        <span class="n">stage</span> <span class="o">=</span> <span class="o">(</span><span class="n">ConstraintLayout</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">stage</span><span class="o">);</span>
+
+        <span class="c1">// 커스텀뷰 생성</span>
+        <span class="n">CustomView</span> <span class="n">cv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CustomView</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="c1">// 레이아웃에 커스텀뷰 추가</span>
+        <span class="n">stage</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">cv</span><span class="o">);</span>
+
+        <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">btnDraw</span><span class="o">).</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">DrawActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="anibutton-class">AniButton class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">coustomview</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.animation.AnimatorSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.animation.ObjectAnimator</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.content.res.TypedArray</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.widget.AppCompatButton</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.util.AttributeSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.MotionEvent</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+
+
+<span class="cm">/**
+ *
+ * animation 속성이 true일 경우
+ *
+ * scale 애니메이션을 사용해서
+ * 클릭시 살짝 커졌다 작아지는 애니메이션 동작
+ *
+ * Created by daeho on 2017. 9. 18..
+ */</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AniButton</span> <span class="kd">extends</span> <span class="n">AppCompatButton</span> <span class="o">{</span>
+    <span class="c1">// 애니메이션 사용여부를 체크하는 변수</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">useAnimation</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getUseAnimation</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="n">useAnimation</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUseAnimation</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">use</span><span class="o">){</span>
+        <span class="n">useAnimation</span> <span class="o">=</span> <span class="n">use</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span> <span class="n">onTouchListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span><span class="o">(){</span>
+        <span class="cm">/**
+         * 터치 다운시 애니메이션 동작
+         * @param v
+         * @param event
+         * @return
+         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
+                <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
+                    <span class="n">runScaleAni</span><span class="o">(</span><span class="n">v</span><span class="o">);</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_UP</span><span class="o">:</span>
+                    <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="cm">/**
+     * 크기를 커졌다 원사이즈로 돌아오는 애니메이션 동작
+     * @param v
+     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">runScaleAni</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">){</span>
+        <span class="n">ObjectAnimator</span> <span class="n">aniX</span> <span class="o">=</span> <span class="n">ObjectAnimator</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">View</span><span class="o">.</span><span class="na">SCALE_X</span><span class="o">,</span> <span class="mf">1.1f</span><span class="o">,</span> <span class="mf">1.0f</span><span class="o">);</span>
+        <span class="n">ObjectAnimator</span> <span class="n">aniY</span> <span class="o">=</span> <span class="n">ObjectAnimator</span><span class="o">.</span><span class="na">ofFloat</span><span class="o">(</span><span class="n">v</span><span class="o">,</span> <span class="n">View</span><span class="o">.</span><span class="na">SCALE_Y</span><span class="o">,</span> <span class="mf">1.1f</span><span class="o">,</span> <span class="mf">1.0f</span><span class="o">);</span>
+
+        <span class="n">AnimatorSet</span> <span class="n">aniSet</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AnimatorSet</span><span class="o">();</span>
+        <span class="n">aniSet</span><span class="o">.</span><span class="na">playTogether</span><span class="o">(</span><span class="n">aniX</span><span class="o">,</span><span class="n">aniY</span><span class="o">);</span>
+        <span class="n">aniSet</span><span class="o">.</span><span class="na">setDuration</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span>
+
+        <span class="n">aniSet</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * 생성자
+     * @param context
+     * @param attrs
+     */</span>
+    <span class="kd">public</span> <span class="nf">AniButton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">);</span>
+
+        <span class="c1">// 세밀한 이벤트 동작처리를 위해 onClickListener 대신 onTouchListener로 사용</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">setOnTouchListener</span><span class="o">(</span><span class="n">onTouchListener</span><span class="o">);</span>
+
+        <span class="c1">// 1. attrs.xml 에 정의된 속성을 가져온다</span>
+        <span class="n">TypedArray</span> <span class="n">typed</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">obtainStyledAttributes</span><span class="o">(</span><span class="n">attrs</span><span class="o">,</span> <span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">AniButton</span><span class="o">);</span>
+
+        <span class="c1">// 2. 해당 이름으로 정의된 속성의 개수를 가져온다</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">typed</span><span class="o">.</span><span class="na">getIndexCount</span><span class="o">();</span>
+
+        <span class="c1">// 3. 반복문을 돌면서 해당 속성에 대한 처리를 해준다</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="c1">// 3.1 현재 배열에 있는 속성 아이디 가져오기</span>
+            <span class="kt">int</span> <span class="n">current_attr</span> <span class="o">=</span> <span class="n">typed</span><span class="o">.</span><span class="na">getIndex</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+
+            <span class="k">switch</span> <span class="o">(</span><span class="n">current_attr</span><span class="o">){</span>
+                <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">styleable</span><span class="o">.</span><span class="na">AniButton_use_animation</span><span class="o">:</span>
+                    <span class="k">if</span><span class="o">(</span><span class="s">"true"</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">typed</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">current_attr</span><span class="o">).</span><span class="na">toLowerCase</span><span class="o">()))</span> <span class="n">setUseAnimation</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                    <span class="k">else</span> <span class="nf">setUseAnimation</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+
+                    <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="customview-class">CustomView class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">coustomview</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.graphics.Canvas</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.graphics.Color</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.graphics.Paint</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.annotation.Nullable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.util.AttributeSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Created by daeho on 2017. 9. 18..
+ */</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CustomView</span> <span class="kd">extends</span> <span class="n">View</span> <span class="o">{</span>
+    <span class="cm">/**
+     * 코드로 생성할때 호출하는 생성자
+     * @param context
+     */</span>
+    <span class="kd">public</span> <span class="nf">CustomView</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">){</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * xml 에서 태그로 사용할 때 시스템에서 호출해주는 생성자
+     * @param context
+     * @param attrs
+     */</span>
+    <span class="kd">public</span> <span class="nf">CustomView</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * 컨트롤이 그려질때 동작하는 메소드에 사각형을 그리는 코드 추가
+     * @param canvas
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDraw</span><span class="o">(</span><span class="n">Canvas</span> <span class="n">canvas</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onDraw</span><span class="o">(</span><span class="n">canvas</span><span class="o">);</span>
+
+        <span class="c1">// 물감 - 겉모양을 결정하는 도구</span>
+        <span class="n">Paint</span> <span class="n">paint</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Paint</span><span class="o">();</span>
+        <span class="n">paint</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">Color</span><span class="o">.</span><span class="na">CYAN</span><span class="o">);</span>
+        <span class="n">paint</span><span class="o">.</span><span class="na">setStrokeWidth</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+
+        <span class="c1">// 종이 - 무엇을 그릴지 결정하는 도구</span>
+        <span class="n">canvas</span><span class="o">.</span><span class="na">drawRect</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="mi">200</span><span class="o">,</span> <span class="n">paint</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="drawactivity-class">DrawActivity class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">coustomview</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.graphics.Color</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.annotation.IdRes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.FrameLayout</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.RadioGroup</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.SeekBar</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DrawActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    <span class="n">FrameLayout</span> <span class="n">stage</span><span class="o">;</span>
+    <span class="n">DrawView</span> <span class="n">dv</span><span class="o">;</span>
+    <span class="n">SeekBar</span> <span class="n">sbSize</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_draw</span><span class="o">);</span>
+
+        <span class="n">init</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(){</span>
+        <span class="c1">// drawview를 추가할 레이아웃 설정</span>
+        <span class="n">stage</span> <span class="o">=</span> <span class="o">(</span><span class="n">FrameLayout</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">stage</span><span class="o">);</span>
+
+        <span class="c1">// drawview를 생성해서 레이아웃에 추가</span>
+        <span class="n">dv</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DrawView</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="n">stage</span><span class="o">.</span><span class="na">addView</span><span class="o">(</span><span class="n">dv</span><span class="o">);</span>
+
+        <span class="c1">// 사이즈 설정을 위한 seekbar 설정 / 리스너 연결</span>
+        <span class="n">sbSize</span> <span class="o">=</span> <span class="o">(</span><span class="n">SeekBar</span><span class="o">)</span><span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbSize</span><span class="o">);</span>
+        <span class="n">sbSize</span><span class="o">.</span><span class="na">setOnSeekBarChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">SeekBar</span><span class="o">.</span><span class="na">OnSeekBarChangeListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onProgressChanged</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">,</span> <span class="kt">int</span> <span class="n">progress</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">fromUser</span><span class="o">)</span> <span class="o">{</span>
+                <span class="c1">// 사이즈 변경 메소드 호출</span>
+                <span class="n">dv</span><span class="o">.</span><span class="na">setSize</span><span class="o">(</span><span class="n">progress</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartTrackingTouch</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStopTrackingTouch</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+        <span class="c1">// 컬러 설정을 위한 라디오그룹 설정 / 리스너 연결</span>
+        <span class="n">RadioGroup</span> <span class="n">rgColor</span> <span class="o">=(</span><span class="n">RadioGroup</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rgColor</span><span class="o">);</span>
+        <span class="n">rgColor</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="k">new</span> <span class="n">RadioGroup</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">RadioGroup</span> <span class="n">group</span><span class="o">,</span> <span class="nd">@IdRes</span> <span class="kt">int</span> <span class="n">checkedId</span><span class="o">)</span> <span class="o">{</span>
+                <span class="kt">int</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">;</span>
+                <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">sbSize</span><span class="o">.</span><span class="na">getProgress</span><span class="o">();</span>
+
+                <span class="k">switch</span> <span class="o">(</span><span class="n">checkedId</span><span class="o">){</span>
+                    <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtBlack</span><span class="o">:</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">BLACK</span><span class="o">;</span> <span class="k">break</span><span class="o">;</span>
+                    <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtCyan</span><span class="o">:</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">CYAN</span><span class="o">;</span> <span class="k">break</span><span class="o">;</span>
+                    <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtMagenta</span><span class="o">:</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">MAGENTA</span><span class="o">;</span> <span class="k">break</span><span class="o">;</span>
+                    <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtYellow</span><span class="o">:</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Color</span><span class="o">.</span><span class="na">YELLOW</span><span class="o">;</span> <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+
+                <span class="c1">// 컬러 변경 메소드 호출</span>
+                <span class="n">dv</span><span class="o">.</span><span class="na">setColor</span><span class="o">(</span><span class="n">color</span><span class="o">,</span> <span class="n">size</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="drawview-class">DrawView class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">radioGroup</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">radioCheckedChangeListener</span><span class="o">);</span>
+
+<span class="n">RadioGroup</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span> <span class="n">radioCheckedChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RadioGroup</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">RadioGroup</span> <span class="n">group</span><span class="o">,</span> <span class="nd">@IdRes</span> <span class="kt">int</span> <span class="n">checkedId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">checkedId</span><span class="o">){</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtRed</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"빨간불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtGreen</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"초록불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtBlue</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"파란불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtSpinner</span><span class="o">:</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">SpinnerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="pathtool-class">PathTool class</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">spackage</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">coustomview</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.graphics.Path</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Path에 color와 size를 포함하기위해 path를 상속받아 만든 클래스
+ *
+ * Created by daeho on 2017. 9. 18..
+ */</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PathTool</span> <span class="kd">extends</span> <span class="n">Path</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">color</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">float</span> <span class="n">size</span><span class="o">;</span>
+
+    <span class="cm">/**
+     * 생성자에서 초기값을 받아 셋팅
+     * @param color
+     * @param size
+     */</span>
+    <span class="kd">public</span> <span class="nf">PathTool</span><span class="o">(</span><span class="kt">int</span> <span class="n">color</span><span class="o">,</span> <span class="kt">float</span> <span class="n">size</span><span class="o">){</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">color</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">=</span> <span class="n">size</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * 컬러를 받아오는 메소드
+      * @return
+     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getColor</span><span class="o">(){</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">color</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * 사이즈를 받아오는 메소드
+     * @return
+     */</span>
+    <span class="kd">public</span> <span class="kt">float</span> <span class="nf">getSize</span><span class="o">()</span> <span class="o">{</span> <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">size</span><span class="o">;</span> <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/android_custom_view.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "android_custom_view.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://idrbwjekyll.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 mnisdh. All rights reserved. <br />
+ Site last generated: Sep 25, 2017 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

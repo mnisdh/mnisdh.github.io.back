@@ -4,9 +4,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="잔돈 계산(Interface 사용) 설명">
-<meta name="keywords" content=" 잔돈 계산(Interface 사용)">
-<title>잔돈 계산(Interface 사용) | Daeho blog</title>
+<meta name="description" content="Layout 설명">
+<meta name="keywords" content=" Layout">
+<title>Layout | Daeho blog</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -131,7 +131,7 @@
 
 
 
-  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:mnisdh2@gmail.com?subject=Daeho blog feedback&body=I have some feedback about the 잔돈 계산(Interface 사용) page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:mnisdh2@gmail.com?subject=Daeho blog feedback&body=I have some feedback about the Layout page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
 
 </li>
 
@@ -149,7 +149,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="잔돈 계산(Interface 사용)">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Layout">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -278,7 +278,7 @@
           
           
           
-          <li class="active"><a href="java_code_change.html">잔돈 계산(Interface 사용)</a></li>
+          <li><a href="java_code_change.html">잔돈 계산(Interface 사용)</a></li>
           
           
           
@@ -322,7 +322,7 @@
           
           
           
-          <li><a href="android_layout.html">Layout</a></li>
+          <li class="active"><a href="android_layout.html">Layout</a></li>
           
           
           
@@ -446,7 +446,7 @@
         <!-- Content Column -->
         <div class="col-md-9" id="tg-sb-content">
             <div class="post-header">
-   <h1 class="post-title-main">잔돈 계산(Interface 사용)</h1>
+   <h1 class="post-title-main">Layout</h1>
 </div>
 
 
@@ -454,7 +454,7 @@
 <div class="post-content">
 
    
-    <div class="summary">잔돈 계산(Interface 사용) 설명</div>
+    <div class="summary">Layout 설명</div>
    
 
     
@@ -485,103 +485,51 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java_code/java_code_change.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/android_layout.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
 
     
 
-  <h3 id="changemain-classmain">ChangeMain class(main)</h3>
+  <h3 id="constraint-layout">Constraint Layout</h3>
+<ul>
+  <li>레이아웃이나 위젯에 연결하여 위치값을 설정하는 레이아웃</li>
+  <li>Frame Layout 다음으로 속도가 빠름</li>
+</ul>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="c1">// 지불금액과 구입금액을 입력받아 잔돈 계산</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
- <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+<p><img width="250" height="450" src="https://github.com/mnisdh/Android/blob/master/android/BasicLayout/capture/ConstraintLayout.png?raw=true" /></p>
 
- <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"지불금액 : "</span><span class="o">);</span>
- <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
- <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"구입금액 : "</span><span class="o">);</span>
- <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>
+<h3 id="frame-layout">Frame Layout</h3>
+<ul>
+  <li>위젯들이 중첩되는 레이아웃</li>
+  <li>게임 같은 어플을 개발할때 사용되며</li>
+  <li>Layout들 중 가장 빠름</li>
+</ul>
 
- <span class="c1">//반복문 사용한 코드</span>
- <span class="n">Change</span> <span class="n">change</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Change</span><span class="o">();</span>
- <span class="n">change</span><span class="o">.</span><span class="na">calc</span><span class="o">(</span><span class="n">num1</span><span class="o">,</span> <span class="n">num2</span><span class="o">);</span>
+<p><img width="250" height="450" src="https://github.com/mnisdh/Android/blob/master/android/BasicLayout/capture/FrameLayout.png?raw=true" /></p>
 
- <span class="c1">//반복문 사용안한 코드</span>
- <span class="c1">//ChangeMain cMain = new ChangeMain();</span>
- <span class="c1">//cMain.calc(num1, num2);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<h3 id="linear-layout">Linear Layout</h3>
+<ul>
+  <li>가로 또는 세로의 단일 방향으로 위젯들을 표시하는 레이아웃</li>
+  <li>위젯들간의 겹침을 허용하지 않으며</li>
+  <li>layout_weight 속성으로 레이아웃에 가중치를 둬서 디바이스 크기에 맞게 크기를 자동 조절할수 있다</li>
+</ul>
 
-<h3 id="designichange-interface---">Design.IChange interface(계산 메소드를 설계한 인터페이스)</h3>
+<p><img width="250" height="450" src="https://github.com/mnisdh/Android/blob/master/android/BasicLayout/capture/LinearLayout.png?raw=true" /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">Design</span><span class="o">;</span>
-<span class="cm">/**
-* 인터페이스를 설계하는 방법
-* 접근제한자 + interface + 이름
-*
-* 설계된데로 구현하도록 강제화하는 방법
-*
-* 인터페이스에 맞는 메소드별로 모아서 생성할것
-*
-* @author daeho
-*
-*/</span>
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IChange</span> <span class="o">{</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">calc</span><span class="o">(</span><span class="kt">int</span> <span class="n">pay</span><span class="o">,</span> <span class="kt">int</span> <span class="n">buy</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<h3 id="grid-layout">Grid Layout</h3>
+<ul>
+  <li>표와 같은 형태로 제공되는 레이아웃</li>
+  <li>컬럼이나 로우등의 속성으로 위젯의 범위를 설정할수 있으나</li>
+  <li>높이나 너비를 균일하게 설정하기 힘들어 사용빈도가 적음</li>
+</ul>
 
-<h3 id="designichangeprint-interface---">Design.IChangePrint interface(출력 메소드를 설계한 인터페이스)</h3>
+<p><img width="250" height="450" src="https://github.com/mnisdh/Android/blob/master/android/BasicLayout/capture/TableLayout.png?raw=true" /></p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">Design</span><span class="o">;</span>
+<h3 id="relative-layout">Relative Layout</h3>
+<ul>
+  <li>Constraint Layout 과 비슷하게 위젯에 연결하여 위치값을 설정하는 레이아웃</li>
+</ul>
 
-<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">IChangePrint</span> <span class="o">{</span>
-		<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">String</span> <span class="n">flag</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<h3 id="change-classichange-ichangeprint---class">Change class(IChange, IChangePrint를 구현한 잔돈계산 class)</h3>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
- * 인터페이스를 구현하기
- * class + 클래스명 + implements + 인터페이스명
- * @author daeho
- *
- */</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Change</span> <span class="kd">implements</span> <span class="n">Design</span><span class="o">.</span><span class="na">IChange</span><span class="o">,</span> <span class="n">Design</span><span class="o">.</span><span class="na">IChangePrint</span> <span class="o">{</span>
-	<span class="kt">int</span><span class="o">[]</span> <span class="n">changeArray</span> <span class="o">=</span> <span class="o">{</span><span class="mi">5000</span><span class="o">,</span> <span class="mi">1000</span><span class="o">,</span> <span class="mi">500</span><span class="o">,</span> <span class="mi">100</span><span class="o">,</span> <span class="mi">50</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
-
-	<span class="cm">/**
-	 * 거스름돈 계산
-	 * ---------반복---------------------
-	 * 잔돈계산
-	 * 잔돈을 현재 거스름돈으로 나눈후 나머지 저장
-	 * ---------------------------------
-	 * @param pay
-	 * @param buy
-	 */</span>
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">calc</span><span class="o">(</span><span class="kt">int</span> <span class="n">pay</span><span class="o">,</span> <span class="kt">int</span> <span class="n">buy</span><span class="o">){</span>
-		<span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">pay</span> <span class="o">-</span> <span class="n">buy</span><span class="o">;</span>
-
-		<span class="c1">//System.out.printf("총거스름돈 : %,d원%n", result);</span>
-		<span class="n">print</span><span class="o">(</span><span class="s">"총거스름돈"</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
-
-		<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">change</span> <span class="o">:</span> <span class="n">changeArray</span><span class="o">){</span>
-			<span class="c1">//System.out.printf("%d원 : %d개%n", change, result / change);</span>
-			<span class="n">print</span><span class="o">(</span><span class="n">change</span> <span class="o">+</span> <span class="s">""</span><span class="o">,</span> <span class="n">result</span> <span class="o">/</span> <span class="n">change</span><span class="o">);</span>
-			<span class="n">result</span> <span class="o">%=</span> <span class="n">change</span><span class="o">;</span>
-		<span class="o">}</span>
-	<span class="o">}</span>
-
-	<span class="nd">@Override</span>
-	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="o">(</span><span class="n">String</span> <span class="n">flag</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">){</span>
-		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">"%d원 : %d개%n"</span><span class="o">,</span> <span class="n">flag</span><span class="o">,</span> <span class="n">count</span><span class="o">);</span>
-	<span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<p><img width="250" height="450" src="https://github.com/mnisdh/Android/blob/master/android/BasicLayout/capture/RelativeLayout.png?raw=true" /></p>
 
 
     <div class="tags">
@@ -598,8 +546,8 @@ $('#toc').on('click', 'a', function() {
      */
 
     var disqus_config = function () {
-        this.page.url = "http://localhost:4000/java_code_change.html";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "java_code_change.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://localhost:4000/android_layout.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "android_layout.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW

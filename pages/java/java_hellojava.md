@@ -9,9 +9,9 @@ permalink: java_hellojava.html
 folder: java
 ---
 
-### 변수 다루는 법
+# 변수 다루는 법
 
-##### int
+### int
 
 ```java
   //정수 연산은 int로 대체된다
@@ -23,7 +23,7 @@ folder: java
 ```
 
 
-##### long
+### long
 
 ```java
   //long 선언시 값마지막에 L붙여줌
@@ -31,7 +31,7 @@ folder: java
 ```
 
 
-##### double, float
+### double, float
 
 ```java
   //실수는 모두 double 로 대체된다
@@ -41,7 +41,7 @@ folder: java
 ```
 
 
-##### 실수 연산
+### 실수 연산
 
 ```java
   //실수는 직접연산하지 않는다
@@ -56,7 +56,7 @@ folder: java
 ```
 
 
-##### 우선순위
+### 우선순위
 
 ```java
   //연산자 우선순위는 괄호로 하고 부족한부분은 검색
@@ -64,7 +64,7 @@ folder: java
 ```
 
 
-##### int to String 메소드
+### int to String 메소드
 
 ```java
   	/**
@@ -78,7 +78,7 @@ folder: java
 ```
 
 
-##### String to int 메소드
+### String to int 메소드
 
 ```java
   	/**
@@ -92,7 +92,7 @@ folder: java
 ```
 
 
-##### String to long 메소드
+### String to long 메소드
 
 ```java
   	/**
@@ -106,7 +106,7 @@ folder: java
 ```
 
 
-### 메소드 구조
+# 메소드 구조
 
 ```java
   접근제한자 리턴타입 함수명(파라미터타입 파라미터) {  
@@ -144,9 +144,9 @@ folder: java
 ```
 
 
-### 조건문
+# 조건문
 
-##### if문
+### if문
 
 ```java
 /**
@@ -169,7 +169,7 @@ public void checkIf(){
 ```
 
 
-##### switch문
+### switch문
 
 ```java
 /**
@@ -191,9 +191,9 @@ public void checkSwitch(){
 ```
 
 
-### 반복문
+# 반복문
 
-##### for문
+### for문
 
 ```java
 /**
@@ -237,7 +237,7 @@ public void checkFor(){
 ```
 
 
-##### while문
+### while문
 
 ```java
 /**
@@ -258,7 +258,7 @@ public void checkWhile(){
 ```
 
 
-##### do while문
+### do while문
 
 ```java
 /**
@@ -280,7 +280,7 @@ public void checkDoWhile(){
 ```
 
 
-### 주석 종류
+# 주석 종류
 
 ```java
 1.

@@ -9,8 +9,7 @@ permalink: java_code_anagram.html
 folder: java_code
 ---
 
-### Algorithm
-스트링을 활용한 알고리즘 풀이 (Anagram)
+### 스트링을 활용한 알고리즘 풀이 (Anagram)
 
 ```java
 import java.util.Arrays;

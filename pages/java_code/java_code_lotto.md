@@ -9,7 +9,7 @@ permalink: java_code_lotto.html
 folder: java_code
 ---
 
-##### 로또번호 생성기
+### 로또번호 생성기
 
 랜덤값을 사용한 로또번호 생성기 연습
 

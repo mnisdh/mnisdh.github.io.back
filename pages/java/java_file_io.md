@@ -9,9 +9,8 @@ permalink: java_file_io.html
 folder: java
 ---
 
-### File Input / Output
 
-##### Input
+### Input
 
 ```java
 public ArrayList<Memo> getList(){
@@ -48,7 +47,7 @@ public ArrayList<Memo> getList(){
 ```
 
 
-##### Output
+### Output
 
 ```java
 public void create(Memo memo){

@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Basic Widget 설명">
+<meta name="keywords" content=" Basic Widget">
+<title>Basic Widget | Daeho blog</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Daeho blog</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="https://github.com/mnisdh" target="_blank">GitHub</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:mnisdh2@gmail.com?subject=Daeho blog feedback&body=I have some feedback about the Basic Widget page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Basic Widget">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">목록 </li>
+  
+  
+  
+  <li>
+      <a href="#">java</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_hellojava.html">변수, 변수연산, 메소드, 조건문, 반복문, 주석</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_OOP_solid.html">OOP Solid</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_interface_abstract.html">다형성(Interface, Abstract)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_string.html">String</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_math_random.html">기초 Algorithm, Math, Random</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_collection.html">Collection</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mvc.html">MVC 패턴</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_file_io.html">File Input / Output</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_mysql_connect.html">mysql 연동</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_generic.html">Generic</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_annotation.html">Annotation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">java 예제 코드</a>
+      <ul>
+          
+          
+          
+          <li><a href="java_code_control_flow.html">문자열 출력(조건문, 반복문 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_change.html">잔돈 계산(Interface 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_anagram.html">Anagram(String 활용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_lotto.html">로또번호 생성기(Random 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_memo.html">메모장(MVC 패턴, mysql 사용)</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="java_code_list_class.html">List Class(Generic 활용)</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">android</a>
+      <ul>
+          
+          
+          
+          <li><a href="android_layout.html">Layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_listener.html">OnClickListener</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_animation.html">Animation</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a href="android_basic_widget.html">Basic Widget</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_custom_view.html">Custom View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_basic_list.html">List View 사용법</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_permission.html">Permission</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_file_i_o.html">File I/O</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="android_sqlite.html">sqlite</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">javascript</a>
+      <ul>
+          
+          
+          
+          <li><a href="js_hellojs.html">기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">node js</a>
+      <ul>
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">mysql</a>
+      <ul>
+          
+          
+          
+          <li><a href="mysql_sql.html">sql 기초문법</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Basic Widget</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Basic Widget 설명</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/java/android_basic_widget.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+  <h3 id="toggle-button">Toggle button</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">toggleButton</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">checkedChangeListener</span><span class="o">);</span>
+
+<span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span> <span class="n">checkedChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">CompoundButton</span> <span class="n">buttonView</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">buttonView</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">toggleButton</span><span class="o">:</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">isChecked</span><span class="o">)</span> <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"토글이 눌렸습니다"</span><span class="o">);</span>
+                <span class="k">else</span> <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"토글이 해제되었습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">};</span>
+</code></pre>
+</div>
+
+<h3 id="switch">Switch</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">switch1</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">checkedChangeListener</span><span class="o">);</span>
+
+<span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span> <span class="n">checkedChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">CompoundButton</span> <span class="n">buttonView</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">buttonView</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">switch1</span><span class="o">:</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">isChecked</span><span class="o">)</span> <span class="n">progressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">VISIBLE</span><span class="o">);</span>
+                <span class="k">else</span> <span class="n">progressBar</span><span class="o">.</span><span class="na">setVisibility</span><span class="o">(</span><span class="n">View</span><span class="o">.</span><span class="na">INVISIBLE</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">};</span>
+</code></pre>
+</div>
+
+<h3 id="checkbox">Checkbox</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">chkCow</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">checkBoxCheckedChangedListener</span><span class="o">);</span>
+<span class="n">chkPig</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">checkBoxCheckedChangedListener</span><span class="o">);</span>
+<span class="n">chkDog</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">checkBoxCheckedChangedListener</span><span class="o">);</span>
+
+<span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span> <span class="n">checkBoxCheckedChangedListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CompoundButton</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">CompoundButton</span> <span class="n">buttonView</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isChecked</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="k">if</span><span class="o">(</span><span class="n">chkCow</span><span class="o">.</span><span class="na">isChecked</span><span class="o">())</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"cow"</span><span class="o">);</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">chkPig</span><span class="o">.</span><span class="na">isChecked</span><span class="o">())</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"pig"</span><span class="o">);</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">chkDog</span><span class="o">.</span><span class="na">isChecked</span><span class="o">())</span> <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"dog"</span><span class="o">);</span>
+
+        <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">""</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">list</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+            <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">i</span> <span class="o">:</span> <span class="n">list</span><span class="o">)</span> <span class="n">str</span> <span class="o">+=</span> <span class="s">","</span> <span class="o">+</span> <span class="n">i</span><span class="o">;</span>
+
+            <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="s">"가 체크되었습니다"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">else</span><span class="o">{</span>
+            <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"전부 해지되었습니다"</span><span class="o">);</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">};</span>
+</code></pre>
+</div>
+
+<h3 id="radiogroup">Radiogroup</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">radioGroup</span><span class="o">.</span><span class="na">setOnCheckedChangeListener</span><span class="o">(</span><span class="n">radioCheckedChangeListener</span><span class="o">);</span>
+
+<span class="n">RadioGroup</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span> <span class="n">radioCheckedChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RadioGroup</span><span class="o">.</span><span class="na">OnCheckedChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCheckedChanged</span><span class="o">(</span><span class="n">RadioGroup</span> <span class="n">group</span><span class="o">,</span> <span class="nd">@IdRes</span> <span class="kt">int</span> <span class="n">checkedId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">checkedId</span><span class="o">){</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtRed</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"빨간불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtGreen</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"초록불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtBlue</span><span class="o">:</span>
+                <span class="n">textView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">"파란불이 켜졌습니다"</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">rbtSpinner</span><span class="o">:</span>
+                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">SpinnerActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h3 id="seekbar">Seekbar</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">seekBar</span><span class="o">.</span><span class="na">setOnSeekBarChangeListener</span><span class="o">(</span><span class="n">seekBarChangeListener</span><span class="o">);</span>
+
+<span class="n">SeekBar</span><span class="o">.</span><span class="na">OnSeekBarChangeListener</span> <span class="n">seekBarChangeListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SeekBar</span><span class="o">.</span><span class="na">OnSeekBarChangeListener</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onProgressChanged</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">,</span> <span class="kt">int</span> <span class="n">progress</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">fromUser</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">txtSeekBarResult</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">progress</span> <span class="o">+</span> <span class="s">""</span><span class="o">);</span>
+        <span class="n">ratingBar</span><span class="o">.</span><span class="na">setRating</span><span class="o">(</span><span class="n">progress</span><span class="o">/</span><span class="mi">100</span> <span class="o">*</span> <span class="n">ratingBar</span><span class="o">.</span><span class="na">getNumStars</span><span class="o">());</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartTrackingTouch</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStopTrackingTouch</span><span class="o">(</span><span class="n">SeekBar</span> <span class="n">seekBar</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="o">}</span>
+<span class="o">};</span>
+</code></pre>
+</div>
+
+<h3 id="spinner">Spinner</h3>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">android</span><span class="o">.</span><span class="na">daehoshin</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">basicwidget</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.AdapterView</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.ArrayAdapter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.Spinner</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpinnerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    <span class="n">Spinner</span> <span class="n">spinner</span><span class="o">;</span>
+    <span class="n">TextView</span> <span class="n">txtResult</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_spinner</span><span class="o">);</span>
+
+        <span class="c1">// 1. 스피너에 입력될 데이터 정의</span>
+        <span class="kd">final</span> <span class="n">String</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="o">{</span><span class="s">"월"</span><span class="o">,</span> <span class="s">"화"</span><span class="o">,</span> <span class="s">"수"</span><span class="o">,</span> <span class="s">"목"</span><span class="o">,</span> <span class="s">"금"</span><span class="o">,</span> <span class="s">"토"</span><span class="o">,</span> <span class="s">"일"</span><span class="o">};</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"월"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"화"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"수"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"목"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"금"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"토"</span><span class="o">);</span>
+        <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"일"</span><span class="o">);</span>
+
+        <span class="c1">// 2. 스피너와 데이터를 연결하는 아답터를 정의</span>
+        <span class="n">ArrayAdapter</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">arrayAdapter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayAdapter</span><span class="o">&lt;&gt;(</span><span class="k">this</span><span class="o">,</span> <span class="n">android</span><span class="o">.</span><span class="na">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">simple_list_item_1</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
+
+        <span class="c1">// 3. 아답터와 스피너(리스트)를 연결</span>
+        <span class="n">spinner</span> <span class="o">=</span> <span class="o">(</span><span class="n">Spinner</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spinner</span><span class="o">);</span>
+        <span class="n">spinner</span><span class="o">.</span><span class="na">setAdapter</span><span class="o">(</span><span class="n">arrayAdapter</span><span class="o">);</span>
+
+        <span class="n">txtResult</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">txtResult</span><span class="o">);</span>
+
+        <span class="c1">// 4. 스피너에 리스너를 달아준다</span>
+        <span class="n">spinner</span><span class="o">.</span><span class="na">setOnItemSelectedListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AdapterView</span><span class="o">.</span><span class="na">OnItemSelectedListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onItemSelected</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">,</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="kt">int</span> <span class="n">position</span><span class="o">,</span> <span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">selectedValue</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">position</span><span class="o">];</span>
+                <span class="n">txtResult</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">selectedValue</span><span class="o">);</span>
+            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNothingSelected</span><span class="o">(</span><span class="n">AdapterView</span><span class="o">&lt;?&gt;</span> <span class="n">parent</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="o">}</span>
+        <span class="o">});</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+
+    var disqus_config = function () {
+        this.page.url = "http://localhost:4000/android_basic_widget.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "android_basic_widget.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://idrbwjekyll.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2017 mnisdh. All rights reserved. <br />
+ Site last generated: Sep 25, 2017 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>

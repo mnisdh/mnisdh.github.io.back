@@ -25,6 +25,60 @@
   
   
   
+  <url>
+    <loc>http://localhost:4000/android_animation.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_basic_list.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_basic_widget.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_custom_view.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_file_i_o.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_layout.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_listener.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_permission.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/android_sqlite.html</loc>
+  </url>
+  
+  
+  
   
   
   <url>

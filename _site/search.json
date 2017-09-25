@@ -3,14 +3,113 @@
 
 
 
+{
+"title": "Animation",
+"tags": "",
+"keywords": "Animation",
+"url": "android_animation.html",
+"summary": "Animation 설명"
+}
+,
+
 
 
 {
-"title": "Getting started with the Documentation Theme for Jekyll",
-"tags": "getting_started",
-"keywords": "sample homepage",
+"title": "List View",
+"tags": "",
+"keywords": "List View",
+"url": "android_basic_list.html",
+"summary": "List View 사용법"
+}
+,
+
+
+
+{
+"title": "Basic Widget",
+"tags": "",
+"keywords": "Basic Widget",
+"url": "android_basic_widget.html",
+"summary": "Basic Widget 설명"
+}
+,
+
+
+
+{
+"title": "Custom View",
+"tags": "",
+"keywords": "Custom View",
+"url": "android_custom_view.html",
+"summary": "Custom View 설명"
+}
+,
+
+
+
+{
+"title": "File I/O",
+"tags": "",
+"keywords": "File I/O",
+"url": "android_file_i_o.html",
+"summary": "File I/O 설명"
+}
+,
+
+
+
+{
+"title": "Layout",
+"tags": "",
+"keywords": "Layout",
+"url": "android_layout.html",
+"summary": "Layout 설명"
+}
+,
+
+
+
+{
+"title": "OnClickListener",
+"tags": "",
+"keywords": "OnClickListener",
+"url": "android_listener.html",
+"summary": "OnClickListener 설명"
+}
+,
+
+
+
+{
+"title": "Permission",
+"tags": "",
+"keywords": "Permission",
+"url": "android_permission.html",
+"summary": "Permission 설명"
+}
+,
+
+
+
+{
+"title": "sqlite",
+"tags": "",
+"keywords": "sqlite",
+"url": "android_sqlite.html",
+"summary": "sqlite 설명"
+}
+,
+
+
+
+
+
+{
+"title": "daeho blog",
+"tags": "",
+"keywords": "daeho blog",
 "url": "index.html",
-"summary": "These brief instructions will help you get started quickly with the theme. The other topics in this help provide additional information and detail about working with other aspects of this theme and Jekyll."
+"summary": "Android"
 }
 ,
 

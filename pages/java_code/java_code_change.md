@@ -9,9 +9,8 @@ permalink: java_code_change.html
 folder: java_code
 ---
 
-### 잔돈계산 시스템(Interface 사용)
 
-##### ChangeMain class(main)
+### ChangeMain class(main)
 
 ```java
 // 지불금액과 구입금액을 입력받아 잔돈 계산
@@ -34,7 +33,7 @@ public static void main(String[] args){
 ```
 
 
-##### Design.IChange interface(계산 메소드를 설계한 인터페이스)
+### Design.IChange interface(계산 메소드를 설계한 인터페이스)
 
 ```java
 package Design;
@@ -55,7 +54,7 @@ public interface IChange {
 ```
 
 
-##### Design.IChangePrint interface(출력 메소드를 설계한 인터페이스)
+### Design.IChangePrint interface(출력 메소드를 설계한 인터페이스)
 
 ```java
 package Design;
@@ -66,7 +65,7 @@ public interface IChangePrint {
 ```
 
 
-##### Change class(IChange, IChangePrint를 구현한 잔돈계산 class)
+### Change class(IChange, IChangePrint를 구현한 잔돈계산 class)
 
 ```java
 /**

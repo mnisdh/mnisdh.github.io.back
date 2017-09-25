@@ -9,15 +9,14 @@ permalink: java_mysql_connect.html
 folder: java
 ---
 
-### mysql 연동
 
-##### Connector 설치
+### Connector 설치
 
 - osx의 경우 [Connector/j](https://dev.mysql.com/downloads/connector/j/5.1.html)를 다운로드한다
 - 이클립스 프로젝트 속성 - Java build path - Libraries - Add External jre로 다운받은 파일 추가하면 완료
 
 
-##### 사용법
+### 사용법
 
 - 드라이버 동적 로드
 
