@@ -9,102 +9,137 @@ permalink: android_permission.html
 folder: java
 ---
 
-### Annotation(Metadata 라고도 불림)
-- 클래스, 메소드, 변수등 모든요소에 선언 가능
-- 컴파일러에게 정보를 알려줄때 사용하거나
-- 컴파일할때 설치시의 작업을 지정하거나
-- 실행할 때 별도의 처리가 필요할때 사용
-
-
-##### 일반적으로 사용하는 Annotation
-
-- @Override : 해당 메소드가 부모클래스의 메소드를 오버라이드 했다는것을 명시적으로 선언
-
-- @Deprecated : 더이상 사용되지 않는 클래스나 메소드를 표시
-
-- @SuppressWarnings : 프로그램에 문제는 없으나 컴파일러가 경고뿌리는 것을 없앨때 사용(되도록 안쓰는게 좋은듯)
-
-
-##### Meta Annotation
-
-- @Target : 어떤것에 적용할것인지
+### [모든 Permission 종류](https://developer.android.com/reference/android/Manifest.permission.html)
+- 안드로이드 기능을 사용시 권한을 획득하여야만 사용할 수 있다
+- 설치시만 체크하는 권한과 런타임시에도 체크해야하는 권한이 있있다
 
 ```
-CONSTRUCTOR 			: 생성자 선언시
-FIELD 						: enum 상수를 포함한 필드값 선언시
-LOCAL_VARIABLE 		: 지역 변수 선언시
-METHOD 						: 메소드 선언시
-PACKAGE 					: 패키지 선언시
-PARAMETER 				: 매개변수 선언시
-TYPE 							: 클래스, 인터페이스, enum 등 선언시
-```
+ACCESS_FINE_LOCATION            위치정보 확인함
+ACCESS_MOCK_LOCATION            위치정보 확인함
+ACCESS_NETWORK_STATE            네트웍이 연결된것을 확인할수 있게함
+INTERNET                        인터넷을 사용함
+WRITE_EXTERNAL_STORAGE          외장메모리 사용
+CALL_PHONE                     	통화                              
+CALL_PRIVILEGED                	통화(긴급전화_포함)               
+CAMERA                         	카메라                            
+CHANGE_COMPONENT_ENABLED_STATE 	컴포넌트의_실효성_변경            
+CHANGE_CONFIGURATION           	컨피그_변경                       
+CHANGE_NETWORK_STATE           	통신상태_변경                     
+CHANGE_WIFI_STATE              	WiFi상태_변경                     
+CONTROL_LOCATION_UPDATES       	위치정보_갱신                     
+INTERNET                       	인터넷                            
+READ_CALENDAR                  	캘린더_읽어오기                   
+READ_CONTACTS                  	주소록_읽어오기                   
+RECEIVE_MMS                    	MMS수신                           
+RECEIVE_SMS                    	SMS수신                           
+SEND_SMS                       	SMS송신                           
 
+SYSTEM_ALERT_WINDOW            	알림_윈도우                       
+VIBRATE                        	진동                              
+WAKE_LOCK                      	알람                              
 
-- @Retention : 얼마나 오래 정보가 유지되는지
-
-```
-SOURCE  	: 컴파일시 사라짐
-CLASS 		: 컴파일러에 의해 참조가능하나 가상머신에서는 사라짐
-RUNTIME 	: 가상머신에 의해서 참조가능
+WRITE_CALENDAR                 	캘린더_쓰기                       
+WRITE_CONTACTS                 	주소록_쓰기                       
+WRITE_GSERVICES                	G서비스_쓰기                      
+WRITE_OWNER_DATA               	owner_data쓰기                    
+WRITE_SETTINGS                 	설정_쓰기
+WRITE_SMS                      	SMS쓰기
 ```
 
 
-- @Inherited : 모든 자식 클래스가 부모 클래스의 어노테이션을 사용할 수 있다는 선언
+### 사용법
 
-
-- @interface : customAnnotation 생성시 사용
-
-
-##### 생성예제
+#### androidmanifest.xml
 
 ```java
-package com.daehoshin.java.annotation;
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.daehoshin.com.permission">
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+    <!-- 권한설정 -->
+    <!-- 실행시간 권한 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 설치 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
-public class AnnoMain {
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-	public static void main(String[] args) {
-		UseAnnotation use = new UseAnnotation();
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BaseActivity"></activity>
+    </application>
 
-		String key = use.getClass().getAnnotation(CustomAnnotation.class).key();
-		if(key.equals("Student")){
-			//런타임시에 해줄 행동을 정의
-		}
-
-	}
-
-}
+</manifest>
+```
 
 
-/**
- * Target = 적용할 대상 : 생성자, 멤버변수, 타입(클래스), 파라미터, 메소드
- * Retention = 에너테이션 정보의 유지단계
- *             소스코드, 클래스, 런타임...
- * Documented = javadoc에 문서화 되어져야하는 엘리먼트
- * Inherited = 상속되는 애너테이션
- *
- * 주로 target, retention을 사용함
- *
- * @author daeho
- *
- */
-@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-@interface CustomAnnotation{
-	public String value() default "값";
-	public String key();
-}
+#### BaseActivity
 
-//@CustomAnnotation(key = "추가된 키값")
-//@CustomAnnotation(key = "Student")
-class UseAnnotation{
-	@CustomAnnotation(key="asdf")
-	public void aaa(){
+```java
+package android.daehoshin.com.permission;
 
-	}
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public abstract class BaseActivity extends AppCompatActivity {
+    private static final int REQ_CODE = 99;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_base);
+
+        // 앱 버전 체크
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) checkPermission();
+        else init();
+    }
+
+    private void checkPermission(){
+        // 1. 권한이 있는지 여부 확인
+        if(checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                && checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            // 2.1 요청할 권한을 정의
+            String permission[] = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+            // 2.2 권한 요청
+            requestPermissions(permission, REQ_CODE);
+        }
+        else{
+            init();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        // 3. 권한 승인 여부 체크
+        switch (requestCode){
+            case REQ_CODE:
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                    init();
+                }
+                break;
+        }
+    }
+
+    abstract void init();
+
+
 }
 ```
